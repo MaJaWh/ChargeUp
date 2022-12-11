@@ -29,9 +29,11 @@ function Login({ setToken }) {
     }
 
     return(
-        <div className="login-wrapper">
+        <div className='login__outer'>
+         <div className='login__background-image'>
+          <div className="login-box">
             <h1>Please Log In</h1>
-        <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
             <label>
                 <p>Username</p>
                 <input type="text" onChange={e => setUsername(e.target.value)}/>
@@ -43,7 +45,9 @@ function Login({ setToken }) {
             <div>
                 <button type="submit">Submit</button>
             </div>
-        </form>
+            </form>
+          </div>
+         </div>
         </div>
     )
 }

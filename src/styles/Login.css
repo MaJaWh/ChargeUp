@@ -1,5 +1,26 @@
-.login-wrapper {
+.login__outer {
+    background-color: none;
+    width: auto;
+    height: 100vh;
+}
+
+.login__background-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('../images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-box{
+    background-color: grey;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;;
+    width: 30%;
 }
