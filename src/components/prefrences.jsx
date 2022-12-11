@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function Prefrences() {
     return(
-        <h2>Prefrences</h2>
+         <div>
+            <Link to='/'>Dashboard</Link>
+            <h2>Prefrences</h2>
+        </div>
     )
 }
 
