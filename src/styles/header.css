@@ -10,7 +10,31 @@
     border-radius: 10px;
 }
 
+.header__prefrences {
+    margin-left: 35px;
+}
+
+.header__link {
+    all: unset;
+    cursor: pointer;
+    color: #a6ac8c;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+
 
 .header__logout {
-     margin-right: 40px;
+     margin-right: 35px;
+}
+
+.header__button {
+    all: unset;
+    cursor: pointer;
+    color: #a6ac8c;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
 }
