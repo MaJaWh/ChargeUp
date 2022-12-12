@@ -1,22 +1,31 @@
-import { Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import "../styles/header.css";
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import '../styles/header.css'
+import useToken from '../customhooks/useToken';
 
 function Header() {
-  const navigate = useNavigate();
 
-  const handleClick = () => {
-    sessionStorage.setItem("token", null);
-    navigate("/Login");
-  };
+    const {removeToken} = useToken()
 
-  return (
-    <div className="header__outer">
-      <Link to="/prefrences">Prefrences</Link>
-      <Link to="/prefrences">Prefrences</Link>
-      <Link to="/prefrences">Prefrences</Link>
-      <Button onClick={handleClick}>Log Out</Button>
-    </div>
-  );
+    const navigate = useNavigate();
+
+    const handleClick = (event) => {
+        event.preventDefault()
+        removeToken();
+        navigate('/login')
+    }
+
+
+    return(
+        <div className='header__outer'>
+            <div className='header__prefrences'>
+                <Link to="/prefrences">Prefrences</Link>
+            </div>
+            <div className='header__logout'>
+                <Link to="/prefrences">Prefrences</Link>
+                <button onClick={handleClick}>Log Out</button>
+            </div>
+        </div>
+    )
 }
 export default Header;

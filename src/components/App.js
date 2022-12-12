@@ -5,22 +5,31 @@ import Dashboard from '../components/dashboard';
 import Login from '../components/Login';
 import Map from '../components/Map';
 import Prefrences from '../components/prefrences';
-import useToken from '../customhooks/useToken';
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
-  const { token, setToken } = useToken();
-
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
-
   return (
     <div className="wrapper">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/prefrences" element={<Prefrences />} />
-          <Route path="/Map" element={<Map />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+            exact
+          />
+          <Route
+            path="/prefrences"
+            element={
+              <ProtectedRoute>
+                <Prefrences />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

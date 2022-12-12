@@ -1,9 +1,10 @@
 .header__outer {
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-height: 30px;
-width: 100%;
-background-color: rgb(76, 72, 72);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    background-color:black;
 };
+
