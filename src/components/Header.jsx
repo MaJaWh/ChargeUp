@@ -22,8 +22,7 @@ function Header() {
                 <Link to="/prefrences">Prefrences</Link>
             </div>
             <div className='header__logout'>
-                <Link to="/prefrences">Prefrences</Link>
-                <button onClick={handleClick}>Log Out</button>
+                <button onClick={handleClick} className="header__button">Log Out</button>
             </div>
         </div>
     )

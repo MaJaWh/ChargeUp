@@ -5,6 +5,14 @@
     text-align: center;
     height: 50px;
     width: 100%;
-    background-color:black;
+    overflow: hidden;
+    background-color:#2C4251;
+    border-radius: 10px;
 };
 
+.header__prefrences {
+
+}
+.header__logout {
+ margin-right: 40px;
+}
