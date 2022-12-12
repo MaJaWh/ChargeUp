@@ -4,10 +4,10 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
 export default function Home() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.GEO_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY
   });
 
-  console.log(useJsApiLoader)
+  console.log(process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY)
 
   if (!isLoaded) return <div>Loading...</div>;
 
