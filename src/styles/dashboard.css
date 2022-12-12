@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'KaushanScript';
+    src: url('../fonts/KaushanScript-Regular.ttf') format("truetype");
+}
+
 .dashboard-wrapper {
-    margin: 10%;
+    margin: 5%;
+}
+.main-title {
+    font-family: 'KaushanScript';
+    color: #758ECD;
+    font-size: 100px;
+    text-align: center;
 }

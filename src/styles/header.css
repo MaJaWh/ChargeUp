@@ -8,11 +8,9 @@
     overflow: hidden;
     background-color:#2C4251;
     border-radius: 10px;
-};
-
-.header__prefrences {
-
 }
+
+
 .header__logout {
- margin-right: 40px;
+     margin-right: 40px;
 }
