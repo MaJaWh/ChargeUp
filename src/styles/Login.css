@@ -6,10 +6,11 @@
 
 h1 {
     font-family: 'KaushanScript';
-    font-size: 60px;
+    font-size: 5vw;
     transform: rotate(-10deg);
     color: #4f71c8;
     margin-bottom: 0;
+    margin-left: -10px;
     text-align: center;
 
 }
@@ -32,6 +33,14 @@ h1 {
     width: 100%;
 }
 
+.login__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .login-box{
     background-color: rgba(240, 237, 238, 0.786);;
     display: flex;
@@ -45,6 +54,7 @@ h1 {
 .login__button-div {
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 
 .login__button {
@@ -58,7 +68,7 @@ h1 {
     border: none;
     display: block;
     margin-left: auto;
-    margin-right: 40px;
+    margin-right: 0px;
     text-shadow: 1px 2px 2px white;
 }
 
@@ -67,23 +77,30 @@ h1 {
 }
 
 .login__input-box {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
     margin: 8px;
 }
 
-.login__input-user {
+.login__input-field {
+    width: 40%;
     all: unset;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
     background-color: #5c604d5e;
     border-radius: 10px;;
 
 }
 
-.login__input-user:hover {
+.login__input-field:hover {
     cursor: pointer;
     background-color: #5c604d97;
     transition: 200ms;
+}
+
+.login__input-user {
+    all: unset;
+    width: 40%;
 }
