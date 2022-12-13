@@ -40,19 +40,19 @@ function Login() {
         <div className='login__outer'>
          <div className='login__background-image'>
           <div className="login-box">
-            <h1>Please Log In</h1>
             <form onSubmit={handleSubmit}>
-            <label>
-                <p>Username</p>
-                <input type="text" onChange={e => setUsername(e.target.value)}/>
-            </label>
-            <label>
-                <p>Password</p>
-                <input type="password"  onChange={e => setPassword(e.target.value)}/>
-            </label>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
+                <div className='login__button-div'>
+                    <h1>ChargeUp</h1>
+                    <button type="submit" className='login__button'>Submit</button>
+                </div>
+                <div  className='login__input-box'>
+                    <label className='login__input-box'>
+                        <input type="text" className='login__input-user' placeholder='UserName' onChange={e => setUsername(e.target.value)}/>
+                    </label>
+                    <label>
+                        <input type="password" className='login__input-user' placeholder='Password' onChange={e => setPassword(e.target.value)}/>
+                    </label>
+                </div>
             </form>
           </div>
          </div>

@@ -3,7 +3,9 @@ import '../styles/footer.css'
 function Footer() {
     return(
         <div className='footer__outer'>
-            <div>Footer</div>
+            <button className='footer__button'>Map</button>
+            <button className='footer__button'>List</button>
+            <button className='footer__button'>Reviews</button>
         </div>
     )
 }

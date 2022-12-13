@@ -1,10 +1,22 @@
 .footer__outer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     color: white;
     text-align: center;
     height: 50px;
     width: 100%;
     background-color:#2C4251;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(240, 237, 238, 0.288);
+}
+
+.footer__button {
+    all: unset;
+    cursor: pointer;
+    color: #a6ac8c;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
 }

@@ -11,7 +11,7 @@ function Dashboard() {
             <div className='main-title'>ChargeUp</div>
            <Header />
             <Map />      
-            <Footer />
+            <Footer className='dashboard__footer'/>
         </div>
     );
 }

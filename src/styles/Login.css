@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'KaushanScript';
+    src: url('../fonts/KaushanScript-Regular.ttf') format("truetype");
+}
+
+
+h1 {
+    font-family: 'KaushanScript';
+    font-size: 60px;
+    transform: rotate(-10deg);
+    color: #4f71c8;
+    margin-bottom: 0;
+    text-align: center;
+
+}
 .login__outer {
     background-color: none;
     width: auto;
@@ -9,7 +24,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url('../images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)),
+                  url(".././images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -17,10 +33,57 @@
 }
 
 .login-box{
-    background-color: grey;
+    background-color: rgba(240, 237, 238, 0.786);;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;;
-    width: 30%;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.login__button-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.login__button {
+    all: unset;
+    cursor: pointer;
+    color: #5c604d;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: 40px;
+    text-shadow: 1px 2px 2px white;
+}
+
+.login__button:hover {
+    font-size: 18px;
+}
+
+.login__input-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px;
+}
+
+.login__input-user {
+    all: unset;
+    margin: 5px;
+    padding: 5px;
+    background-color: #5c604d5e;
+    border-radius: 10px;;
+
+}
+
+.login__input-user:hover {
+    cursor: pointer;
+    background-color: #5c604d97;
+    transition: 200ms;
 }
