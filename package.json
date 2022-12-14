@@ -18,6 +18,7 @@
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
     "request": "^2.88.2",
+    "response": "^0.18.0",
     "semantic-ui-react": "^2.1.4",
     "web-vitals": "^2.1.4"
   },
@@ -27,6 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "https://chargepoints.dft.gov.uk",
   "eslintConfig": {
     "extends": [
       "react-app",
