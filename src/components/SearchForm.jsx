@@ -1,23 +1,53 @@
-import { useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import "./Map";
 
-function SearchForm() {
+const Search = ({ setchargeSites }) => {
+  const [searchValue, setSearchValue] = useState("");
 
-  useEffect(() => {
-    axios
-      .get(
-        "/api/retrieve/registry/lat/53.483959/long/-2.244644/dist/2/limit/30/format/json"
-      )
-      .then((response) => {
-        const ChargingStation = response.data.ChargeDevice;
-        const longitude = ChargingStation.map((e) => e.ChargeDeviceLocation.Longitude);
-        const latitude= ChargingStation.map((e) => e.ChargeDeviceLocation.Latitude);
-        const address = ChargingStation.map((e) => e.ChargeDeviceLocation.Address)
-        const googleLocation = latitude.map((element, index) => { return { lat: element, lng: longitude[index], address: address[index] } })
-        console.log(googleLocation);
-        return(googleLocation);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    getData();
+  };
+
+  const getData = async () => {
+    console.log(searchValue)
+    fetch(
+      `/api/retrieve/registry/connector-type/${searchValue}/limit/1000/format/json`
+      // `/api/retrieve/registry/lat/53.483959/long/-2.244644/dist/5/limit/300/format/json/?q=${query}`
+      //         {type: 'postcode',
+      //         value: "m2 6ds"}
+      //         api/retrieve/${query.type}/${query.value}
+      //`postcode/m23dr`
+      // lat/29387293/long/3462832
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setchargeSites(data.ChargeDevice);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-  }, []);
-}
+  };
+  return (
+    <div className="search">
+      <form className="search-form" onSubmit={handleSubmit}>
+        <input
+          className="search-input"
+          type="text"
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
+        <button className="search-btn" type="submit">
+          Go!
+        </button>
+      </form>
+    </div>
+  );
+};
 
-export default SearchForm;
+export default Search;
+
+Search.propTypes = {
+  setSearchResults: PropTypes.func,
+};
