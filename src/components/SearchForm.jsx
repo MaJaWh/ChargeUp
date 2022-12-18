@@ -4,7 +4,8 @@ import "./Map";
 
 const Search = ({ setchargeSites }) => {
   const [searchValue, setSearchValue] = useState("");
-  const [distnaceValue, setDistanceValue] = useState("")
+  const [distanceValue, setDistanceValue] = useState("")
+  const [ratedOutput, setRatedOutput] = useState("")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -12,9 +13,9 @@ const Search = ({ setchargeSites }) => {
   };
 
   const getData = async () => {
-    console.log(searchValue)
+    console.log(searchValue, distanceValue)
     fetch(
-      `/api/retrieve/registry/postcode/${searchValue}/dist/${distnaceValue}/format/json`
+      `/api/retrieve/registry/postcode/${searchValue}/dist/${distanceValue}/rated-output-kw/${ratedOutput}/format/json`
       // `/api/retrieve/registry/lat/53.483959/long/-2.244644/dist/5/limit/300/format/json/?q=${query}`
       //         {type: 'postcode',
       //         value: "m2 6ds"}
@@ -46,6 +47,14 @@ const Search = ({ setchargeSites }) => {
           className="search-input"
           type="text"
           onChange={(e) => setDistanceValue(e.target.value)}
+        />
+        <button className="search-btn" type="submit">
+          Go!
+        </button>
+        <input
+          className="search-input"
+          type="text"
+          onChange={(e) => setRatedOutput(e.target.value)}
         />
         <button className="search-btn" type="submit">
           Go!
