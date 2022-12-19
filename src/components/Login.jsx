@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Login.css";
 import useToken from "../customhooks/useToken";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 async function loginUser(credentials) {
   return fetch("http://localhost:8080/login", {
@@ -39,9 +39,6 @@ function Login() {
           <form onSubmit={handleSubmit} className="login__form">
             <div className="login__button-div">
               <h1>ChargeUp</h1>
-              <button type="submit" className="login__button">
-                Submit
-              </button>
             </div>
             <div className="login__input-box">
               <label className="login__input-field">
@@ -61,6 +58,12 @@ function Login() {
                 />
               </label>
             </div>
+              <div className="login__container">
+              <button type="submit" className="login__button">
+                Enter
+              </button>
+                <Link to="/CreateAccount" className="login__create-button">CreateAccount</Link>
+              </div>
           </form>
         </div>
       </div>

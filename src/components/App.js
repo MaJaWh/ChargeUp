@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import "../styles/App.css";
-import Dashboard from "../components/dashboard";
-import Login from "../components/Login";
-import ProtectedRoute from "./ProtectedRoute";
-import SearchForm from "./SearchForm";
-import Prefrences from "./prefrences";
+import '../styles/App.css';
+import Dashboard from '../components/dashboard';
+import Login from '../components/Login';
+import ProtectedRoute from './ProtectedRoute';
+import SearchForm from './SearchForm';
+import CreateAccount from './UserAccount/CreateAccount';
 
 function App() {
   return (
@@ -23,14 +23,21 @@ function App() {
             exact
           />
           <Route
-            path="/prefrences"
+            path="/searchform"
             element={
               <ProtectedRoute>
-                <Prefrences />
+                <SearchForm />
               </ProtectedRoute>
             }
           />
-          <Route path="/searchform" element={<ProtectedRoute><SearchForm /></ProtectedRoute>} />
+          <Route
+            path="/createAccount"
+            element={
+              <ProtectedRoute>
+                <CreateAccount />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>
