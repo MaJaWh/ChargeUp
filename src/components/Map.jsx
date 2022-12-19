@@ -2,8 +2,8 @@ import { React } from "react";
 import "../styles/Map.css";
 import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
 
-export default function Home({ chargeSites }) {
-  console.log(chargeSites)
+export default function Home({ userCoords, chargeSites }) {
+  console.log(userCoords);
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY,
   });
@@ -15,15 +15,10 @@ export default function Home({ chargeSites }) {
   return <Map />;
 
   function Map() {
-    const center = {
-      lat: 53.483959,
-      lng: -2.244644,
-    };
-
     return (
       <GoogleMap
         zoom={12}
-        center={center}
+        center={userCoords}
         mapContainerClassName="map-container"
       >
         {chargeSites.map((charger) => {
@@ -37,4 +32,5 @@ export default function Home({ chargeSites }) {
         })}
       </GoogleMap>
     );
-  }}
+  }
+}

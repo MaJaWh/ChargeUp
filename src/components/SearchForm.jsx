@@ -13,7 +13,7 @@ const Search = ({ setchargeSites }) => {
   };
 
   const getData = async () => {
-    console.log(searchValue, distanceValue)
+    console.log(searchValue, distanceValue, ratedOutput)
     fetch(
       `/api/retrieve/registry/postcode/${searchValue}/dist/${distanceValue}/rated-output-kw/${ratedOutput}/format/json`
       // `/api/retrieve/registry/lat/53.483959/long/-2.244644/dist/5/limit/300/format/json/?q=${query}`
