@@ -19,7 +19,7 @@ function Header() {
     return(
         <div className='header__outer'>
             <div className='header__prefrences'>
-                <Link to="/createAccount" className='header__link'>Account</Link>
+                <Link to="" className='header__link'>My Account</Link>
             </div>
             <div className='header__logout'>
                 <button onClick={handleClick} className="header__button">Log Out</button>

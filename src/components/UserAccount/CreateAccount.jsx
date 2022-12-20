@@ -42,8 +42,11 @@ function CreateAccount() {
 
     return(
         <div className='form-outer'>
+            <div className='form__background-image'>
+                <div className='form-box'>
+
             <h3>Create New User</h3>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className='form'>
                 <div className='form-group'>
                     <lable htmlFor="name">Name</lable>
                     <input 
@@ -99,9 +102,11 @@ function CreateAccount() {
                     type="submit"
                     value="Create"
                     className="btn btn-primary"
-                />
+                    />
                 </div>
-            </form>
+                </form>
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,16 +1,73 @@
 .form-outer {
+    background-color: none;
+    width: 100%;
+    height: 100%;
+}
+
+.form-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: solid rgb(41, 93, 78) 19px;
+    border-radius: 10px;
+    padding: 6px;
+    background-color:  rgba(240, 237, 238, 0.786);
+    width: 40%;
+}
+
+.form__background-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)),
+                  url(".././images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
+    background-position: center;
+    height: 100%;
 }
 
 h3 {
     font-family: 'KaushanScript';
-    font-size: 5vw;
+    font-size: 4vw;
     transform: rotate(-10deg);
     color: #4f71c8;
-    margin-bottom: 0;
+    margin-bottom: 10;
     margin-left: -10px;
     text-align: center;
+}
 
+.form {
+    background-color: rgba(0, 0, 0, 0.262);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.form-group {
+    padding: 10px;
+    font-size: 20px;
+    text-align: end;    
+}
+
+.form-control {
+    width: 40%;
+    all: unset;
+    margin: 10px;
+    padding: 5px;
+    background-color: #5c604d5e;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    width: 40%;
+    all: unset;
+    margin: 10px;
+    padding: 5px;
+    color: rgba(240, 237, 238, 0.786);
+    background-color: #933a3aae;
+    border-radius: 10px;;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
 }

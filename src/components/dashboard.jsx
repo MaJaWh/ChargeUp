@@ -7,11 +7,15 @@ import '../styles/dashboard.css'
 
 function Dashboard() {
     return(
-        <div className='dashboard-wrapper'>
-            <div className='main-title'>ChargeUp</div>
-           <Header />
-            <Map />      
-            <Footer className='dashboard__footer'/>
+        <div className='dashboard-outer'>
+            <div className='dashboard__background-image'>
+                <div className='dashboard-wrapper'>
+                    <h1 className='main-title'>ChargeUp</h1>
+                        <Header />
+                        <Map />      
+                        <Footer className='dashboard__footer'/>
+                </div>
+            </div>
         </div>
     );
 }
