@@ -68,6 +68,26 @@ function CreateAccount() {
                     />
                 </div>
                 <div className='form-group'>
+                    <lable htmlFor="name">New Password</lable>
+                    <input 
+                    type="text"
+                    className='form-control'
+                    id='password'
+                    value={form.password}
+                    onChange={(e) => updateForm({ email: e.target.value })}
+                    />
+                </div>
+                <div className='form-group'>
+                    <lable htmlFor="name">Confirm Password</lable>
+                    <input 
+                    type="text"
+                    className='form-control'
+                    id='passwordConfirmation'
+                    value={form.passwordConfirmation}
+                    onChange={(e) => updateForm({ email: e.target.value })}
+                    />
+                </div>
+                <div className='form-group'>
                     <lable htmlFor="name">Car Make</lable>
                     <input 
                     type="text"
@@ -94,6 +114,16 @@ function CreateAccount() {
                     className='form-control'
                     id='range'
                     value={form.range}
+                    onChange={(e) => updateForm({ car: e.target.value })}
+                    />
+                </div>
+                <div className='form-group'>
+                    <lable htmlFor="name">Plug Type</lable>
+                    <input 
+                    type="text"
+                    className='form-control'
+                    id='plugType'
+                    value={form.plugType}
                     onChange={(e) => updateForm({ car: e.target.value })}
                     />
                 </div>
