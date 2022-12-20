@@ -5,6 +5,7 @@
 
 .dashboard-wrapper {
     margin: 5%;
+    width: 100%;
 }
 .main-title {
     font-family: 'KaushanScript';
