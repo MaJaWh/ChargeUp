@@ -3,3 +3,14 @@
     flex-direction: column;
     align-items: center;
 }
+
+h3 {
+    font-family: 'KaushanScript';
+    font-size: 5vw;
+    transform: rotate(-10deg);
+    color: #4f71c8;
+    margin-bottom: 0;
+    margin-left: -10px;
+    text-align: center;
+
+}
