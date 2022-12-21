@@ -6,6 +6,8 @@ import Login from '../components/Login';
 import ProtectedRoute from './ProtectedRoute';
 import SearchForm from './SearchForm';
 import CreateAccount from './UserAccount/CreateAccount';
+import EditAccount from './UserAccount/EditAccount';
+import MyAccount from './UserAccount/MyAccount.jsx';
 
 function App() {
   return (
@@ -35,6 +37,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <CreateAccount />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/editAccount"
+            element={
+              <ProtectedRoute>
+                <EditAccount />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/myAccount"
+            element={
+              <ProtectedRoute>
+                <MyAccount />
               </ProtectedRoute>
             }
           />

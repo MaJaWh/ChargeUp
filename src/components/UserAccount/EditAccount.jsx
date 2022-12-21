@@ -56,7 +56,7 @@ function EditAccount() {
             connectorType: form.connectorType,
         };
 
-        await fetch(`http://localhost:7002/update/${parms.id}`, {
+        await fetch(`http://localhost:7002/update/${params.id}`, {
             method: "POST",
             body: JSON.stringify(editedUser),
             headers: {
@@ -72,7 +72,7 @@ function EditAccount() {
             <div className='form__background-image'>
                 <div className='form-box'>
 
-            <h3>Edit User details</h3>
+            <h3>Edit User</h3>
             <form onSubmit={onSubmit} className='form'>
                 <div className='form-group'>
                     <lable htmlFor="name">Name</lable>
@@ -157,13 +157,14 @@ function EditAccount() {
                 <div className="form-group">
                 <input
                     type="submit"
-                    value="Create"
+                    value="Edit"
                     className="btn btn-primary"
                     />
                 </div>
                 </form>
                 </div>
             </div>
+        </div>
     )
 }
 
