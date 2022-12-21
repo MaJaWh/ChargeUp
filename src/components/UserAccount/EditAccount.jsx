@@ -1,20 +1,42 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/createAccount.css'
+import  React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router';
 
-function CreateAccount() {
-    const [form, setForm] = useState({
+function EditAccount() {
+
+    const [ form, setForm ] = useState({
         name: "",
         email: "",
-        newPassword: "",
-        confirmPassword: "",
-        carMake: "",
-        carModel: "",
-        range: "",
-        connectorType: "",
+        user: [],
     });
 
+    const params = useParams();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        async function fetchData() {
+            const id = params.id.toString();
+            const response = await fetch(`http://localhost:7002/user/${params.id.toString()}`);
+
+            if(!response.ok) {
+                const message = `An error has accurred: ${response.statusText}`;
+                window.alert(message);
+                return;
+            }
+
+            const record = await response.json();
+            if(!record) {
+                window.alert(`User with id ${id} not found`)
+                navigate("/");
+                return;
+            }
+
+            setForm(record);
+        }
+
+        fetchData();
+
+        return;
+    }, [params.id, navigate]);
 
     function updateForm(value) {
         return setForm((prev) => {
@@ -23,42 +45,34 @@ function CreateAccount() {
     }
 
     async function onSubmit(e) {
-        e.preventDefault();
-    
+        e.preventDefautl();
+        const editedUser = {
+            name: form.name,
+            email: form.email,
+            password: form.password,
+            carMake: form.carMake,
+            carModel: form.carModel,
+            range: form.range,
+            connectorType: form.connectorType,
+        };
 
-    const newPerson = { ...form };
+        await fetch(`http://localhost:7002/update/${parms.id}`, {
+            method: "POST",
+            body: JSON.stringify(editedUser),
+            headers: {
+                'content-type': 'application/json'
+            },
+        });
 
-    await fetch("http://localhost:7002/user/add", {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json",
-        },
-        body: JSON.stringify(newPerson),
-    })
-    .catch(error => {
-        window.alert(error);
-        return;
-    });
-
-    setForm({ 
-    name: "",
-    email: "",
-    newPassword: "",
-    confirmPassword: "",
-    carMake: "",
-    carModel: "",
-    range: "",
-    connectorType: "", });
-    navigate("/")
-};
-
+        navigate("/")
+    }
 
     return(
         <div className='form-outer'>
             <div className='form__background-image'>
                 <div className='form-box'>
 
-            <h3>Create New User</h3>
+            <h3>Edit User details</h3>
             <form onSubmit={onSubmit} className='form'>
                 <div className='form-group'>
                     <lable htmlFor="name">Name</lable>
@@ -150,8 +164,7 @@ function CreateAccount() {
                 </form>
                 </div>
             </div>
-        </div>
     )
 }
 
-export default CreateAccount;
+export default EditAccount

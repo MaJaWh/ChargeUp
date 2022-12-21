@@ -70,4 +70,5 @@ h3 {
 
 .btn-primary:hover {
     transform: scale(1.1);
+    background-color: #933a3afd;
 }
