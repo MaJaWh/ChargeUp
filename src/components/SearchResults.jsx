@@ -12,7 +12,7 @@ const SearchResults = ({ results }) => {
             key={Home}
             className="card-image"
             src={Home}
-            alt="spaceImage"
+            alt="mapImage"
           />
         ))}
       </div>
