@@ -1,10 +1,9 @@
 const express = require('express');
 
+const userRouter = require('./routes/userRoute');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello from the server side!');
-});
+app.use('/createUser', userRouter);
 
-app.post('/createUser', (res, req) => {});
 module.exports = app;
