@@ -19,6 +19,25 @@ exports.createUser = async (req, res) => {
   }
 };
 
+exports.getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    res.status(200).json({
+      staus: 'success',
+      data: {
+        user,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(400).json({
+      status: 'fail',
+      message: 'error',
+    });
+  }
+};
+
 exports.getAllTours = async (req, res) => {
   try {
     const users = await User.find();
