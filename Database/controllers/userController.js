@@ -38,7 +38,7 @@ exports.getUser = async (req, res) => {
   }
 };
 
-exports.getAllTours = async (req, res) => {
+exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
 

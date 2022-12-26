@@ -13,7 +13,6 @@ const usersSchema = new mongoose.Schema({
   password: {
     type: String,
     requires: [true, 'Please enter your pasword'],
-    unique: true,
   },
 });
 const User = mongoose.model('User', usersSchema);
