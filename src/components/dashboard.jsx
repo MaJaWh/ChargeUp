@@ -3,11 +3,12 @@ import Header from "../components/Header";
 import Footer from "./Footer";
 import Map from "../components/Map";
 import "../styles/dashboard.css";
-import Search from "./SearchForm";
+import Search from "./Search";
 
 function Dashboard() {
   const [chargeSites, setchargeSites] = useState([]);
   const [coordinates, setCoordinates] = useState({});
+  const [chargerStatus, setChargerStatus] = useState("")
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -21,9 +22,10 @@ function Dashboard() {
     <div className="dashboard-wrapper">
       <div className="main-title">ChargeUp</div>
       <Header />
-      <Map userCoords={coordinates} chargeSites={chargeSites} />
+      <Map userCoords={coordinates} chargeSites={chargeSites} chargerStatus={chargerStatus} />
       <Footer className="dashboard__footer" />
-      <Search setchargeSites={setchargeSites} />
+      <Search setchargeSites={setchargeSites} setChargerStatus={setChargerStatus} chargeSites={chargeSites}/>
+
     </div>
   );
 }

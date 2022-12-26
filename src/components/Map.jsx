@@ -6,6 +6,7 @@ import {
   MarkerF,
   InfoWindowF,
 } from "@react-google-maps/api";
+import { RiChargingPileFill }  from "react-icons/ri"
 
 function Map({ userCoords, chargeSites }) {
   const [position, setPosition] = useState(null);
@@ -13,6 +14,7 @@ function Map({ userCoords, chargeSites }) {
   const [accessibilityFlag, setAccessibilityFlag] = useState(null);
   const [inService, setInService] = useState(null);
 
+  
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY,
   });
@@ -33,7 +35,7 @@ function Map({ userCoords, chargeSites }) {
           Accessible24Hours,
           ChargeDeviceStatus,
         } = charger;
-
+        
         return (
           <MarkerF
             onMouseOver={() => {
@@ -54,11 +56,12 @@ function Map({ userCoords, chargeSites }) {
             accessibilityFlag={Accessible24Hours}
             inService={ChargeDeviceStatus}
           >
-            {position === ChargeDeviceId && (
+            {position === ChargeDeviceId && ChargeDeviceStatus && (
               <InfoWindowF
                 position={{ lat: Number(Latitude), lng: Number(Longitude) }}
               >
                 <div>
+                <RiChargingPileFill size={70} />
                   <div>Payment Required? {paymentFlag ? "Yes" : "No"}</div>
                   <div>
                     Accessible 24 Hours? {accessibilityFlag ? "Yes" : "No"}
