@@ -1,9 +1,5 @@
-.map__outer {
-    height: 70vh;
-}
-
 .map-container {
-    margin:20px 0 20px 0;
-    width: auto;
-    height: 50vh;
+    margin: none;
+    width: 100%;
+    height: 100%
 }

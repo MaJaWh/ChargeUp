@@ -22,10 +22,11 @@ function Dashboard() {
     <div className="dashboard-wrapper">
       <div className="main-title">ChargeUp</div>
       <Header />
-      <Map userCoords={coordinates} chargeSites={chargeSites} chargerStatus={chargerStatus} />
+        <div className="dashboard_map-box">
+          <Search className="dashboard_search" setchargeSites={setchargeSites} setChargerStatus={setChargerStatus} chargeSites={chargeSites}/>
+          <Map className="dashboard_map" userCoords={coordinates} chargeSites={chargeSites} chargerStatus={chargerStatus} />
+        </div>
       <Footer className="dashboard__footer" />
-      <Search setchargeSites={setchargeSites} setChargerStatus={setChargerStatus} chargeSites={chargeSites}/>
-
     </div>
   );
 }

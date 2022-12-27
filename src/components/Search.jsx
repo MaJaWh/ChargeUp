@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Map";
+import '../styles/search.css'
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
 const Search = ({ setchargeSites, setChargerStatus, chargeSites }) => {
@@ -30,30 +31,29 @@ const Search = ({ setchargeSites, setChargerStatus, chargeSites }) => {
   };
   return (
     <div className="search">
+      <h2>Search</h2>
       <form className="search-form" onSubmit={handleSubmit}>
         <input
           className="search-input"
           type="text"
+          placeholder="postcode"
           onChange={(e) => setSearchValue(e.target.value)}
         />
-        <button className="search-btn" type="submit">
-          Postcode
-        </button>
         <input
           className="search-input"
           type="text"
+          placeholder="Distance from location"
           onChange={(e) => setDistanceValue(e.target.value)}
         />
-        <button className="search-btn" type="submit">
-          Radius
-        </button>
+      
         <input
           className="search-input"
           type="text"
+          placeholder="kw/h of car"
           onChange={(e) => setRatedOutput(e.target.value)}
         />
         <button className="search-btn" type="submit">
-          Kw/H
+          Find!
         </button>
         {/* <GetConnectorStatus chargeSites={chargeSites}/> */}
       </form>

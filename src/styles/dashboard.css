@@ -4,6 +4,9 @@
 }
 
 .dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 5%;
 }
 .main-title {
@@ -14,3 +17,20 @@
     margin-bottom: 30px;
 }
 
+.dashboard_map-box {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    width: 100%;
+    margin: 20px;
+}
+
+.dashboard_search {
+    width: 15%;
+    height: 100%
+}
+
+.dashboard_map {
+    width: 75%;
+    height: 100%;
+}
