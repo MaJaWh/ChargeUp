@@ -57,7 +57,7 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .login__button {
@@ -88,10 +88,10 @@ h1 {
 .login__input-field {
     width: 40%;
     all: unset;
-    margin: 10px;
+    margin-left: 20px;
     padding: 5px;
     background-color: #5c604d5e;
-    border-radius: 10px;;
+    border-radius: 10px;
 
 }
 
@@ -104,4 +104,5 @@ h1 {
 .login__input-user {
     all: unset;
     width: 40%;
+    margin-top: 4px;
 }
