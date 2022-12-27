@@ -1,20 +1,25 @@
 import { React, useState } from "react";
 import "../styles/Map.css";
+import CustomMarker from '../assets/images/charging.png';
 import {
   GoogleMap,
   useJsApiLoader,
   MarkerF,
   InfoWindowF,
 } from "@react-google-maps/api";
-import { RiChargingPileFill }  from "react-icons/ri"
+import { RiChargingPileFill, Ri24HoursLine } from "react-icons/ri";
+import { MdPriceCheck } from "react-icons/md";
+import { FaBatteryFull, FaBatteryEmpty } from "react-icons/fa";
+import { TbFreeRights } from "react-icons/tb";
+import { BiNoEntry } from "react-icons/bi";
 
 function Map({ userCoords, chargeSites }) {
   const [position, setPosition] = useState(null);
   const [paymentFlag, setPaymentFlag] = useState(null);
   const [accessibilityFlag, setAccessibilityFlag] = useState(null);
   const [inService, setInService] = useState(null);
+  const [chargerStreet, setChargerStreet] = useState(null)
 
-  
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY,
   });
@@ -28,45 +33,57 @@ function Map({ userCoords, chargeSites }) {
       mapContainerClassName="map-container"
     >
       {chargeSites.map((charger) => {
-        const { Latitude, Longitude } = charger.ChargeDeviceLocation;
+        const { Latitude, Longitude, } = charger.ChargeDeviceLocation;
         const {
           ChargeDeviceId,
           PaymentRequiredFlag,
           Accessible24Hours,
           ChargeDeviceStatus,
         } = charger;
-        
+        const { Street } = charger.ChargeDeviceLocation.Address
+
         return (
           <MarkerF
+          options={{
+            icon: CustomMarker,
+          }}
             onMouseOver={() => {
               setPosition(ChargeDeviceId);
               setPaymentFlag(PaymentRequiredFlag);
               setAccessibilityFlag(Accessible24Hours);
               setInService(ChargeDeviceStatus);
+              setChargerStreet(Street);
             }}
             onMouseOut={() => {
               setPosition(null);
               setPaymentFlag(null);
               setAccessibilityFlag(null);
               setInService(null);
+              setChargerStreet(null)
             }}
             key={charger.ChargeDeviceId}
             position={{ lat: Number(Latitude), lng: Number(Longitude) }}
             paymentFlag={PaymentRequiredFlag}
             accessibilityFlag={Accessible24Hours}
             inService={ChargeDeviceStatus}
+            chargerStreet={Street}
           >
-            {position === ChargeDeviceId && ChargeDeviceStatus && (
+            {position === ChargeDeviceId && (
               <InfoWindowF
                 position={{ lat: Number(Latitude), lng: Number(Longitude) }}
               >
                 <div>
-                <RiChargingPileFill size={70} />
-                  <div>Payment Required? {paymentFlag ? "Yes" : "No"}</div>
-                  <div>
-                    Accessible 24 Hours? {accessibilityFlag ? "Yes" : "No"}
+                  <RiChargingPileFill
+                    size={70}
+                  />
+                   <div>
+                  {chargerStreet}
                   </div>
-                  <div>Charger In Service? {inService ? "Yes" : "No"}</div>
+                  <div> Paid: {paymentFlag ? <MdPriceCheck className="payment-icon" size={18} /> : <TbFreeRights size={18} />}</div>
+                  <div>
+                    24hrs: {accessibilityFlag ? <Ri24HoursLine className="clock-icon" size={18} /> : <BiNoEntry size={18} />}
+                  </div>
+                  <div> status: {inService ? <FaBatteryFull className="battery-icon" size ={18} />: <FaBatteryEmpty size={18} />}</div>
                 </div>
               </InfoWindowF>
             )}
