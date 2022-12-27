@@ -1,52 +1,80 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import "../styles/Map.css";
-import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  MarkerF,
+  InfoWindowF,
+} from "@react-google-maps/api";
+import { RiChargingPileFill }  from "react-icons/ri"
 
-export default function Home() {
-  const [chargeSites, setchargeSites] = useState([]);
+function Map({ userCoords, chargeSites }) {
+  const [position, setPosition] = useState(null);
+  const [paymentFlag, setPaymentFlag] = useState(null);
+  const [accessibilityFlag, setAccessibilityFlag] = useState(null);
+  const [inService, setInService] = useState(null);
 
-  useEffect(() => {
-      fetch('/api/retrieve/registry/lat/53.483959/long/-2.244644/dist/50/limit/1000/format/json')
-      .then((res) => res.json())
-      .then((data) => {
-          setchargeSites(data.ChargeDevice)
-      })
-      .catch((err) => {
-        console.log(err)
-      });
-  }, [])
-
+  
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY,
   });
 
-  console.log(process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY);
-  console.log(chargeSites)
-
   if (!isLoaded) return <div>Loading...</div>;
 
-  return <Map />;
-
-  function Map() {
-    const center = {
-      lat: 53.483959,
-      lng: -2.244644,
-    };
-
-    return (
-      <GoogleMap
-        zoom={12}
-        center={center}
-        mapContainerClassName="map-container"
-      >
-        {chargeSites.map(charger => { 
-          const { Latitude, Longitude } = charger.ChargeDeviceLocation
-          return <MarkerF
-          key={charger.ChargeDeviceId}
-          position={{lat: Number(Latitude), lng: Number(Longitude)}}
-          />
-        })}
-      </GoogleMap>
-    );
-  }
+  return (
+    <GoogleMap
+      zoom={12}
+      center={userCoords}
+      mapContainerClassName="map-container"
+    >
+      {chargeSites.map((charger) => {
+        const { Latitude, Longitude } = charger.ChargeDeviceLocation;
+        const {
+          ChargeDeviceId,
+          PaymentRequiredFlag,
+          Accessible24Hours,
+          ChargeDeviceStatus,
+        } = charger;
+        
+        return (
+          <MarkerF
+            onMouseOver={() => {
+              setPosition(ChargeDeviceId);
+              setPaymentFlag(PaymentRequiredFlag);
+              setAccessibilityFlag(Accessible24Hours);
+              setInService(ChargeDeviceStatus);
+            }}
+            onMouseOut={() => {
+              setPosition(null);
+              setPaymentFlag(null);
+              setAccessibilityFlag(null);
+              setInService(null);
+            }}
+            key={charger.ChargeDeviceId}
+            position={{ lat: Number(Latitude), lng: Number(Longitude) }}
+            paymentFlag={PaymentRequiredFlag}
+            accessibilityFlag={Accessible24Hours}
+            inService={ChargeDeviceStatus}
+          >
+            {position === ChargeDeviceId && ChargeDeviceStatus && (
+              <InfoWindowF
+                position={{ lat: Number(Latitude), lng: Number(Longitude) }}
+              >
+                <div>
+                <RiChargingPileFill size={70} />
+                  <div>Payment Required? {paymentFlag ? "Yes" : "No"}</div>
+                  <div>
+                    Accessible 24 Hours? {accessibilityFlag ? "Yes" : "No"}
+                  </div>
+                  <div>Charger In Service? {inService ? "Yes" : "No"}</div>
+                </div>
+              </InfoWindowF>
+            )}
+          </MarkerF>
+        );
+      })}
+    </GoogleMap>
+  );
 }
+
+export default Map;

@@ -1,19 +1,33 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from './Footer'
-import Map from '../components/Map'
-import '../styles/dashboard.css'
-
+import { React, useState, useEffect } from "react";
+import Header from "../components/Header";
+import Footer from "./Footer";
+import Map from "../components/Map";
+import "../styles/dashboard.css";
+import Search from "./Search";
 
 function Dashboard() {
-    return(
-        <div className='dashboard-wrapper'>
-            <div className='main-title'>ChargeUp</div>
-           <Header />
-            <Map />      
-            <Footer className='dashboard__footer'/>
-        </div>
+  const [chargeSites, setchargeSites] = useState([]);
+  const [coordinates, setCoordinates] = useState({});
+  const [chargerStatus, setChargerStatus] = useState("")
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      }
     );
+  }, []);
+
+  return (
+    <div className="dashboard-wrapper">
+      <div className="main-title">ChargeUp</div>
+      <Header />
+      <Map userCoords={coordinates} chargeSites={chargeSites} chargerStatus={chargerStatus} />
+      <Footer className="dashboard__footer" />
+      <Search setchargeSites={setchargeSites} setChargerStatus={setChargerStatus} chargeSites={chargeSites}/>
+
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
