@@ -1,19 +1,14 @@
-@font-face {
-    font-family: 'KaushanScript';
-    src: url('../fonts/KaushanScript-Regular.ttf') format("truetype");
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 
 h1 {
-    font-family: 'KaushanScript';
+    font-family: 'raleway';
     font-size: 5vw;
-    transform: rotate(-10deg);
-    color: #4f71c8;
-    margin-bottom: 0;
-    margin-left: -10px;
+    color: tomato;
+    margin-bottom: 20px;
     text-align: center;
-
 }
+
 .login__outer {
     background-color: none;
     width: auto;
@@ -39,6 +34,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 8px;
 }
 
 .login-box{
@@ -46,41 +42,46 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;;
     width: 40%;
     border-radius: 10px;
 }
 
-.login__button-div {
+/* .login__button-div {
     display: flex;
     flex-direction: column;
     width: 50%;
+} */
+
+.login__button-box {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
 }
 
 .login__button {
+    width: 20%;
     all: unset;
     cursor: pointer;
-    color: #5c604d;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-    font-weight: bold;
+    color: white;
+    padding: 8px;
+    font-size: 15px;
     border: none;
     display: block;
-    margin-left: auto;
-    margin-right: 0px;
-    text-shadow: 1px 2px 2px white;
+    margin-right: 10px;
+    background-color: tomato;
+    border-radius: 10px;
 }
 
 .login__button:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .login__input-box {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     margin: 8px;
 }
 

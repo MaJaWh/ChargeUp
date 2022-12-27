@@ -11,9 +11,6 @@ function Login() {
           <form className="login__form">
             <div className="login__button-div">
               <h1>ChargeUp</h1>
-              <button type="submit" className="login__button">
-                Submit
-              </button>
             </div>
             <div className="login__input-box">
               <label className="login__input-field">
@@ -32,6 +29,14 @@ function Login() {
                   // onChange={(e) => setPassword(e.target.value)}
                 />
               </label>
+              <div className="login__button-box">
+              <button type="submit" className="login__button">
+                Login
+              </button>
+              <button type="submit" className="login__button">
+                Sign Up
+              </button>
+              </div>
             </div>
           </form>
         </div>
