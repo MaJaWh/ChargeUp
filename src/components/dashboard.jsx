@@ -20,7 +20,6 @@ function Dashboard() {
 
   return (
     <div className="dashboard-wrapper">
-      <div className="main-title">ChargeUp</div>
       <Header />
         <div className="dashboard_map-box">
           <Search className="dashboard_search" setchargeSites={setchargeSites} setChargerStatus={setChargerStatus} chargeSites={chargeSites}/>

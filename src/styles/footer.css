@@ -6,17 +6,21 @@
     text-align: center;
     height: 50px;
     width: 100%;
-    background-color:#2C4251;
+    background-color: #2d4250ce;
     border-radius: 10px;
     box-shadow: 10px 5px 5px rgba(240, 237, 238, 0.288);
 }
 
-.footer__button {
+.header__btn {
     all: unset;
     cursor: pointer;
-    color: #a6ac8c;
-    padding: 10px;
+    background-color: rgb(158, 157, 157);
+    border-radius: 8px;
+    color: #e5e5e5;
+    text-align: center;
+    padding: 6px 10px 6px;
     font-size: 15px;
     font-weight: bold;
     border: none;
+    margin-right: 20px;
 }

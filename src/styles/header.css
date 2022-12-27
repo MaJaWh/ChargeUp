@@ -1,17 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 .header__outer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    height: 50px;
+    height: 70px;
     width: 100%;
     overflow: hidden;
-    background-color:#2C4251;
+    background-color:#2d4250ce;
     border-radius: 10px;
-}
-
-.header__prefrences {
-    margin-left: 35px;
 }
 
 .header__link {
@@ -24,17 +22,29 @@
     border: none;
 }
 
+h2 {
+    font-family: Raleway;
+    margin-left: 30px;
+    color: tomato;
+    font-size: 30px;
+    padding: 20px;
+}
+
 
 .header__logout {
      margin-right: 35px;
 }
 
-.header__button {
+.footer__button {
     all: unset;
     cursor: pointer;
-    color: #a6ac8c;
-    padding: 10px;
+    background-color: rgb(158, 157, 157);
+    border-radius: 8px;
+    color: #f2f1f1;
+    text-align: center;
+    padding: 6px 10px 6px;
     font-size: 15px;
     font-weight: bold;
     border: none;
+    margin-right: 20px;
 }

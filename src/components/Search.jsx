@@ -31,7 +31,7 @@ const Search = ({ setchargeSites, setChargerStatus, chargeSites }) => {
   };
   return (
     <div className="search">
-      <h2>Search</h2>
+      <div className="search__title">Search</div>
       <form className="search-form" onSubmit={handleSubmit}>
         <input
           className="search-input"

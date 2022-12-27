@@ -1,7 +1,8 @@
 .search {
-    background-color:#2C4251;
+    background-color:#2c4251a1;
     margin-right: 20px;
     padding: 20px;
+    border-radius: 10px;;
 }
 
 .search-form {

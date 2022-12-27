@@ -18,11 +18,12 @@ function Header() {
 
     return(
         <div className='header__outer'>
-            <div className='header__prefrences'>
-                <Link to="/prefrences" className='header__link'>Prefrences</Link>
+            <div className='header__account'>
+                <h2>ChargeUp</h2>
             </div>
             <div className='header__logout'>
-                <button onClick={handleClick} className="header__button">Log Out</button>
+                <button className='header__btn'>Account</button>
+                <button onClick={handleClick} className="header__btn">Log Out</button>
             </div>
         </div>
     )
