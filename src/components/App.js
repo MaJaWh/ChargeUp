@@ -4,6 +4,8 @@ import "../styles/App.css";
 import Dashboard from "../components/dashboard";
 import Login from "../components/Login";
 import ProtectedRoute from "./ProtectedRoute";
+import SearchForm from './SearchForm';
+import Prefrences from './prefrences';
 
 function App() {
   return (
@@ -19,6 +21,22 @@ function App() {
               </ProtectedRoute>
             }
             exact
+          />
+          <Route
+            path="/prefrences"
+            element={
+              <ProtectedRoute>
+                <Prefrences />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/searchform"
+            element={
+              <ProtectedRoute>
+                <SearchForm />
+              </ProtectedRoute>
+            }
           />
         </Routes>
       </BrowserRouter>
