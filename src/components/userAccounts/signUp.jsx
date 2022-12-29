@@ -38,57 +38,59 @@ function CreateAccount() {
         <div className='form-outer'>
             <div className='form__background-image'>
                 <div className='form-box'>
-
-            <h3>Create New User</h3>
-            <form onSubmit={onSubmit} className='form'>
-                <div className='form-group'>
-                    <lable htmlFor="name">Name</lable>
-                    <input 
-                    type="text"
-                    className='form-control'
-                    id='name'
-                    value={form.name}
-                    onChange={(e) => setForm({ name: e.target.value })}
-                    />
-                </div>
-                <div className='form-group'>
-                    <lable htmlFor="name">Email</lable>
-                    <input 
-                    type="text"
-                    className='form-control'
-                    id='email'
-                    value={form.email}
-                    onChange={(e) => setForm({ email: e.target.value })}
-                    />
-                </div>
-                <div className='form-group'>
-                    <lable htmlFor="name">New Password</lable>
-                    <input 
-                    type="text"
-                    className='form-control'
-                    id='password'
-                    value={form.password}
-                    onChange={(e) => setForm({ email: e.target.value })}
-                    />
-                </div>
-                <div className='form-group'>
-                    <lable htmlFor="name">Confirm Password</lable>
-                    <input 
-                    type="text"
-                    className='form-control'
-                    id='passwordConfirmation'
-                    value={form.passwordConfirm}
-                    onChange={(e) => setForm({ email: e.target.value })}
-                    />
-                </div>
-                <div className="form-group">
-                <input
-                    type="submit"
-                    value="Create"
-                    className="btn btn-primary"
-                    />
-                </div>
-                </form>
+                    <h3>Create New User</h3>
+                    <form onSubmit={onSubmit} className='form'>
+                        <div className='form-group'>
+                            <lable htmlFor="name">Name</lable>
+                            <input 
+                            type="text"
+                            className='form-control'
+                            id='name'
+                            value={form.name}
+                            onChange={(e) => setForm({ name: e.target.value })}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <lable htmlFor="name">Email</lable>
+                            <input 
+                            type="text"
+                            className='form-control'
+                            id='email'
+                            value={form.email}
+                            onChange={(e) => setForm({ email: e.target.value })}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <lable htmlFor="name">New Password</lable>
+                            <input 
+                            type="text"
+                            className='form-control'
+                            id='password'
+                            value={form.password}
+                            onChange={(e) => setForm({ email: e.target.value })}
+                            />
+                        </div>
+                        <div className='form-group'>
+                            <lable htmlFor="name">Confirm Password</lable>
+                            <input 
+                            type="text"
+                            className='form-control'
+                            id='passwordConfirmation'
+                            value={form.passwordConfirm}
+                            onChange={(e) => setForm({ email: e.target.value })}
+                            />
+                        </div>
+                        <div className="btn__outer-box">
+                            <div className="form-group">
+                            <input
+                                type="submit"
+                                value="Create"
+                                className="btn btn-primary"
+                                />
+                            </div>
+                            <button className="btn-back">Go Back</button>
+                        </div>
+                        </form>
                 </div>
             </div>
         </div>

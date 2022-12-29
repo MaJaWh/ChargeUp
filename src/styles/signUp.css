@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+
+h3 {
+    font-family: 'raleway';
+    font-size: 3vw;
+    color: tomato;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form__outer {
+    background-color: none;
+    width: auto;
+    height: 100vh;
+}
+
+.form__background-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)),
+                  url(".././images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+.form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    padding: 8px;
+    margin: 20px;
+    background-color: antiquewhite;
+    border-radius: 15px;
+}
+
+.form-box{
+    background-color: rgba(240, 237, 238, 0.786);;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border-radius: 10px;
+}
+.btn__outer-box {
+    display: flex;
+    flex-direction: row;
+
+}
+.btn {
+    width: 20%;
+    all: unset;
+    cursor: pointer;
+    color: white;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    display: block;
+    margin-right: 10px;
+    background-color: tomato;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.form-control {
+    width: 40%;
+    all: unset;
+    margin: 20px;
+    padding: 5px;
+    background-color: #5c604d5e;
+    border-radius: 10px;
+
+}
+
+.form-control:hover {
+    cursor: pointer;
+    background-color: #5c604d97;
+    transition: 200ms;
+}
