@@ -4,7 +4,7 @@ import "./Map";
 import '../styles/search.css'
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
-const Search = ({ setchargeSites, setChargerStatus, chargeSites }) => {
+const Search = ({ setchargeSites, setChargerStatus }) => {
   const [searchValue, setSearchValue] = useState("");
   const [distanceValue, setDistanceValue] = useState("");
   const [ratedOutput, setRatedOutput] = useState("");
