@@ -68,7 +68,7 @@ function CreateAccount() {
                             className='form-control'
                             id='password'
                             value={form.password}
-                            onChange={(e) => setForm({ email: e.target.value })}
+                            onChange={(e) => setForm({ password: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
@@ -78,7 +78,7 @@ function CreateAccount() {
                             className='form-control'
                             id='passwordConfirmation'
                             value={form.passwordConfirm}
-                            onChange={(e) => setForm({ email: e.target.value })}
+                            onChange={(e) => setForm({ passwordConfirm: e.target.value })}
                             />
                         </div>
                         <div className="btn__outer-box">
