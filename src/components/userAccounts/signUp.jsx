@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/signUp.css'
 
 function CreateAccount() {
@@ -81,17 +82,17 @@ function CreateAccount() {
                             />
                         </div>
                         <div className="btn__outer-box">
-                            <div className="form-group">
-                            <input
-                                type="submit"
-                                value="Create"
-                                className="btn btn-primary"
-                                />
-                            </div>
-                            <button className="btn-back">Go Back</button>
+                                <div className="form-group">
+                                    <input
+                                        type="submit"
+                                        value="Create"
+                                        className="btn btn-primary"
+                                    />
+                                </div>
+                            <Link to="/landingPage" className="btn">Go Back</Link>
                         </div>
-                        </form>
-                </div>
+                    </form>
+                </div>  
             </div>
         </div>
     )
