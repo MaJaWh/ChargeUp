@@ -68,7 +68,7 @@ function CreateAccount() {
                             className='form-control'
                             id='password'
                             value={form.password}
-                            onChange={(e) => setForm({ password: e.target.value })}
+                            onChange={(e) => setForm({ newPassword: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
