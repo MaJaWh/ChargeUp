@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Map";
-import '../styles/search.css'
+import "../styles/search.css";
+import Filters from "./Filters";
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
 const Search = ({ setchargeSites, setChargerStatus }) => {
   const [searchValue, setSearchValue] = useState("");
   const [distanceValue, setDistanceValue] = useState("");
   const [ratedOutput, setRatedOutput] = useState("");
+  console.log(setchargeSites, "<-----setChargesites")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,7 +24,7 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
       .then((res) => res.json())
       .then((data) => {
         setchargeSites(data.ChargeDevice);
-        setChargerStatus(data.ChargeDevice)
+        setChargerStatus(data.ChargeDevice);
         console.log(data);
       })
       .catch((err) => {
@@ -45,7 +47,7 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
           placeholder="Distance from location"
           onChange={(e) => setDistanceValue(e.target.value)}
         />
-      
+
         <input
           className="search-input"
           type="text"
@@ -55,8 +57,10 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
         <button className="search-btn" type="submit">
           Find!
         </button>
+
         {/* <GetConnectorStatus chargeSites={chargeSites}/> */}
       </form>
+      <Filters />
     </div>
   );
 };

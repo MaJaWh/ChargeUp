@@ -4,13 +4,13 @@ import Footer from "./Footer";
 import Map from "../components/Map";
 import "../styles/dashboard.css";
 import Search from "./Search";
-import Filters from "./Filters";
 
 function Dashboard() {
   const [chargeSites, setchargeSites] = useState([]);
   const [coordinates, setCoordinates] = useState({});
   const [chargerStatus, setChargerStatus] = useState("");
   const [plugFinder, setPlugFinder] = useState([])
+  console.log(plugFinder,"<------")
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -29,17 +29,14 @@ function Dashboard() {
           setchargeSites={setchargeSites}
           setChargerStatus={setChargerStatus}
           chargeSites={chargeSites}
+          setPlugFinder={setPlugFinder}
+          plugFinder={plugFinder}
         />
         <Map
           className="dashboard_map"
           userCoords={coordinates}
           chargeSites={chargeSites}
           chargerStatus={chargerStatus}
-        />
-        <Filters
-        className="dashboard_filter"
-        setPlugFinder={setPlugFinder}
-        plugFinder={plugFinder}
         />
       </div>
       <Footer className="dashboard__footer" />
