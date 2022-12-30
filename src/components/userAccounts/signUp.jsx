@@ -14,7 +14,7 @@ function CreateAccount() {
 
     async function onSubmit(e) {
         e.preventDefault();
-            await fetch("http://localhost:7002/user/add", {
+            await fetch("http://localhost:5000/user/add", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -68,7 +68,7 @@ function CreateAccount() {
                             className='form-control'
                             id='password'
                             value={form.password}
-                            onChange={(e) => setForm({ newPassword: e.target.value })}
+                            onChange={(e) => setForm({ password: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
