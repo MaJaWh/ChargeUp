@@ -3,8 +3,10 @@ const dotenv = require('dotenv');
 const express = require('express');
 const userRouter = require('./routes/userRoute');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.urlencoded());
 // app.use(bodyParser.raw({ type: '*/*' }));
 

@@ -1,18 +1,49 @@
 import React, { useState } from "react";
-import { Link} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import PropTypes from "prop-types";
 import "../styles/LandingPage.css";
+import useToken from '../customhooks/useToken'
 
 function LandingPage() {
 
-  const [ username, setUsername ] = useState()
+  const [ email, setEmail ] = useState()
   const [ password, setPassword ] = useState()
+  const { setToken } = useToken()
+  const navigate = useNavigate()
+
+  const submitHandler = async (event) => {
+    event.preventDefault()
+
+    const response = await fetch('http://localhost:3000/user/login', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        email,
+        password,
+      })
+    }).catch((error) => {
+      alert('A network error has occured')
+  })
+    const userLogin = await response.json()
+    console.log(userLogin)
+    if(userLogin.token) {
+      setToken(userLogin.token)
+      navigate('/')
+    } else {
+      alert('Please enter the correct password/email')
+    }
+  } 
+
+
+
  
   return (
     <div className="login__outer">
       <div className="login__background-image">
         <div className="login-box">
-          <form className="login__form">
+          <form className="login__form" onSubmit={submitHandler}>
             <div className="login__button-div">
               <h1>ChargeUp</h1>
             </div>
@@ -21,8 +52,8 @@ function LandingPage() {
                 <input
                   type="text"
                   className="login__input-user"
-                  placeholder="UserName"
-                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </label>
               <label className="login__input-field">

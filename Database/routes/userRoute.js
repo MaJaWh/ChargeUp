@@ -11,7 +11,7 @@ router.post('/login', authController.login);
 
 router.route('/:id').get(userController.getUser);
 
-router.route('/').get(authController.protect, userController.getAllUsers);
+router.route('/').get(authController.protect);
 
 //   .patch(userController.updateUser)
 //   .delete(userController.deleteUser);

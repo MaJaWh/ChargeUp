@@ -1,38 +1,40 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/signUp.css'
+import useToken from '../../customhooks/useToken'
 
 function CreateAccount() {
+
+    const { setToken } = useToken()
+    const navigate = useNavigate()
+
     const [form, setForm] = useState({
         name: "",
         email: "",
-        newPassword: "",
+        password: "",
         passwordConfirm: "",
     });
-    const newUser = {};
 
+    const createUserHandler = async (event) => {
+        event.preventDefault()
+        console.log(form)
 
-    async function onSubmit(e) {
-        e.preventDefault();
-            await fetch("http://localhost:5000/user/add", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            }   ,
-        body: JSON.stringify(newUser),
-    })
-    .catch(error => {
-        window.alert(error);
-        return;
-    });
-
-    setForm({ 
-    name: "",
-    email: "",
-    newPassword: "",
-    passwordConfirm: "",
-    
-});
+        const response = await fetch('http://localhost:3000/user/signup', {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams(form)
+        }).catch((error) => {
+            alert('A network error has occured')
+        })
+        const userResponse = await response.json()
+        if(userResponse.token) {
+            setToken(userResponse.token)
+            navigate('/')
+        } else {
+            alert('User not created')
+        }
     }
 
     return(
@@ -40,45 +42,45 @@ function CreateAccount() {
             <div className='form__background-image'>
                 <div className='form-box'>
                     <h3>Create New User</h3>
-                    <form onSubmit={onSubmit} className='form'>
+                    <form onSubmit={createUserHandler} className='form'>
                         <div className='form-group'>
-                            <lable htmlFor="name">Name</lable>
+                            <label htmlFor="name">Name</label>
                             <input 
                             type="text"
                             className='form-control'
                             id='name'
                             value={form.name}
-                            onChange={(e) => setForm({ name: e.target.value })}
+                            onChange={(e) => setForm({...form, name: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
-                            <lable htmlFor="name">Email</lable>
+                            <label htmlFor="name">Email</label>
                             <input 
                             type="text"
                             className='form-control'
                             id='email'
                             value={form.email}
-                            onChange={(e) => setForm({ email: e.target.value })}
+                            onChange={(e) => setForm({...form,  email: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
-                            <lable htmlFor="name">New Password</lable>
+                            <label htmlFor="name">New Password</label>
                             <input 
                             type="text"
                             className='form-control'
                             id='password'
                             value={form.password}
-                            onChange={(e) => setForm({ password: e.target.value })}
+                            onChange={(e) => setForm({...form, password: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
-                            <lable htmlFor="name">Confirm Password</lable>
+                            <label htmlFor="name">Confirm Password</label>
                             <input 
                             type="text"
                             className='form-control'
                             id='passwordConfirmation'
                             value={form.passwordConfirm}
-                            onChange={(e) => setForm({ passwordConfirm: e.target.value })}
+                            onChange={(e) => setForm({...form,  passwordConfirm: e.target.value })}
                             />
                         </div>
                         <div className="btn__outer-box">
