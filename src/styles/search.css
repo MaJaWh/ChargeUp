@@ -38,6 +38,10 @@
     margin-top: 20px;
     padding: 5px;
 }
+
+.search-btn:hover {
+   transform:  scale(1.1)
+}
 .search__filters {
     margin-top: 20px;
     width: 100%;
