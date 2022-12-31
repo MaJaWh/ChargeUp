@@ -6,6 +6,7 @@
     padding: 20px;
     border-radius: 10px;
     width: 25%;
+    border: 4px solid white
 }
 
 .search__title {
