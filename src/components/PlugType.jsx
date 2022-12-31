@@ -12,41 +12,35 @@ import "../styles/plugType.css";
 
 const PlugType = () => {
   return (
-    <div>
-      <div className="plug_types">
+    <div className="plugtype__outer-div">
         <button>
-          <img src={Chad} size="" alt="Chademo plug"></img>ChadEmo
+          <img className="img__btn" src={Chad} size="" alt="Chademo plug"></img>ChadEmo
         </button>
         <button>
-          <img src={Caravan} size="" alt="Caravan Mains"></img>Caravan Mains
+          <img className="img__btn" src={Caravan} size="" alt="Caravan Mains"></img>Caravan Mains
         </button>
         <button>
-          <img src={Commando} size="" alt="Commando"></img>Commando
-        </button>
-      </div>
-      <div className="plug_types">
-        <button>
-          <img src={J1772} size="" alt="J1772"></img>J1772
+          <img className="img__btn" src={Commando} size="" alt="Commando"></img>Commando
         </button>
         <button>
-          <img src={Roadster} size="" alt="Roadster"></img>Roadster
+          <img className="img__btn" src={J1772} size="" alt="J1772"></img>J1772
         </button>
         <button>
-          <img src={Tesla} size="" alt="Tesla"></img>Tesla
-        </button>
-      </div>
-      <div className="plug_types">
-        <button>
-          <img src={Type2} size="" alt="Type2"></img>Type2
+          <img className="img__btn" src={Roadster} size="" alt="Roadster"></img>Roadster
         </button>
         <button>
-          <img src={Type3} size="" alt="Type3"></img>Type3
+          <img className="img__btn" src={Tesla} size="" alt="Tesla"></img>Tesla
         </button>
         <button>
-          <img src={Wall} size="" alt="Wall"></img>Wall
+          <img className="img__btn" src={Type2} size="" alt="Type2"></img>Type2
+        </button>
+        <button>
+          <img className="img__btn" src={Type3} size="" alt="Type3"></img>Type3
+        </button>
+        <button>
+          <img className="img__btn" src={Wall} size="" alt="Wall"></img>Wall
         </button>
       </div>
-    </div>
   );
 };
 

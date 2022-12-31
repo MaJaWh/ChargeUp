@@ -9,7 +9,6 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
   const [searchValue, setSearchValue] = useState("");
   const [distanceValue, setDistanceValue] = useState("");
   const [ratedOutput, setRatedOutput] = useState("");
-  console.log(setchargeSites, "<-----setChargesites")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -60,7 +59,9 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
 
         {/* <GetConnectorStatus chargeSites={chargeSites}/> */}
       </form>
-      <Filters />
+      <div className="search__filters">
+        <Filters/>
+      </div>
     </div>
   );
 };

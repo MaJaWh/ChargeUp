@@ -1,5 +1,6 @@
 import { React } from "react";
 import PlugType from "./PlugType";
+import '../styles/filters.css'
 
 const Filters = ({}) => {
   const handleSubmit = async (event) => {
@@ -19,13 +20,12 @@ const Filters = ({}) => {
   };
 
   return (
-    <div className="Filter">
-      <div className="Filter__Title"></div>
+    <div className="filter">
       <form className="filter-form" onSubmit={handleSubmit}>
+        <PlugType />
         <button className="search-btn" type="submit">
           Filter
         </button>
-        <PlugType />
       </form>
     </div>
   );

@@ -2,16 +2,11 @@
 
 .filter {
     background-color:#2c4251ba;
-    margin-right: 20px;
-    padding: 20px;
-    border-radius: 10px;;
-}
-
-.Filter__Title {
-    font-size: 20px;
-    color: tomato;
-    font-family: raleway;
-    font-weight: bold;
+    margin: 6px;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 75%;
 }
 
 .filter-form {
@@ -19,15 +14,15 @@
     flex-direction: column;
 }
 
-.filter-input {
+/* .filter-input {
     all: unset;
     width: 90%;
     background-color: aliceblue;
     padding: 4px;
     border-radius: 5px;;
     margin-top: 20px;
-}
-.search-btn {
+} */
+/* .search-btn {
     all: unset;
     width: 40px;
     text-align: center;
@@ -42,4 +37,4 @@
     background-color: grey;
     box-shadow: 0 5px #2c4251a1;
     transform: translateY(4px);
-  }
+  } */

@@ -9,8 +9,7 @@ function Dashboard() {
   const [chargeSites, setchargeSites] = useState([]);
   const [coordinates, setCoordinates] = useState({});
   const [chargerStatus, setChargerStatus] = useState("");
-  const [plugFinder, setPlugFinder] = useState([])
-  console.log(plugFinder,"<------")
+  const [plugFinder, setPlugFinder] = useState([]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
