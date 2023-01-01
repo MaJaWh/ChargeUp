@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Chad from "../assets/images/chademo.png";
 import Caravan from "../assets/images/caravan-mains.png";
 import Commando from "../assets/images/commando.png";
@@ -11,22 +11,46 @@ import Wall from "../assets/images/wall-bs1363.png";
 import "../styles/plugType.css";
 
 const PlugType = () => {
+  const [plug, setPlug] = useState("hello");
+
+  useEffect(() => {
+    fetch(`api/retrieve/type/format/json/`)
+      .then((res) => res.json())
+      .then((data) => setPlug(data));
+  }, []);
+
+  console.log(Object.entries(plug), "plug");
+
+//   const handleClick = () => {
+//     setPlug(plug)
+//   }
+
   return (
-    <div className="plugtype__outer-div">
+    <div>
+      <div className="plugtype__outer-div">
         <button>
-          <img className="img__btn" src={Chad} size="" alt="Chademo plug"></img>ChadEmo
+          <img className="img__btn" src={Chad} size="" alt="Chademo plug"></img>
+          ChadEmo
         </button>
         <button>
-          <img className="img__btn" src={Caravan} size="" alt="Caravan Mains"></img>Caravan Mains
+          <img
+            className="img__btn"
+            src={Caravan}
+            size=""
+            alt="Caravan Mains"
+          ></img>
+          Caravan Mains
         </button>
         <button>
-          <img className="img__btn" src={Commando} size="" alt="Commando"></img>Commando
+          <img className="img__btn" src={Commando} size="" alt="Commando"></img>
+          Commando
         </button>
         <button>
           <img className="img__btn" src={J1772} size="" alt="J1772"></img>J1772
         </button>
         <button>
-          <img className="img__btn" src={Roadster} size="" alt="Roadster"></img>Roadster
+          <img className="img__btn" src={Roadster} size="" alt="Roadster"></img>
+          Roadster
         </button>
         <button>
           <img className="img__btn" src={Tesla} size="" alt="Tesla"></img>Tesla
@@ -41,6 +65,7 @@ const PlugType = () => {
           <img className="img__btn" src={Wall} size="" alt="Wall"></img>Wall
         </button>
       </div>
+    </div>
   );
 };
 
