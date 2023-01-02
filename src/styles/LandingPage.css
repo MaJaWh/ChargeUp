@@ -21,7 +21,7 @@ h1 {
     justify-content: center;
     flex-direction: column;
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)),
-                  url(".././images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
+    url(".././images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
@@ -44,6 +44,7 @@ h1 {
     align-items: center;
     width: 40%;
     border-radius: 10px;
+    border: 5px solid white;
 }
 
 /* .login__button-div {

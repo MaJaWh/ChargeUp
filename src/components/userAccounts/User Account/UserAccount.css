@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.user-account__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)),
+                  url("../../../images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}

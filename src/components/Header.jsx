@@ -14,6 +14,11 @@ function Header() {
         navigate('/landingPage')
     }
 
+    const handleUserAccount = (event) => {
+        event.preventDefault()
+        navigate('/userAccount')
+    }
+
 
     return(
         <div className='header__outer'>
@@ -21,7 +26,7 @@ function Header() {
                 <h2>ChargeUp</h2>
             </div>
             <div className='header__logout'>
-                <button className='header__btn'>Account</button>
+                <button onClick={handleUserAccount} className='header__btn'>Account</button>
                 <button onClick={handleClick} className="header__btn">Log Out</button>
             </div>
         </div>

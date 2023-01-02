@@ -4,6 +4,7 @@ import '../styles/App.css';
 import Dashboard from '../components/dashboard';
 import LandingPage from './LandingPage';
 import SignUp from './userAccounts/signUp.jsx';
+import UserAccount from './userAccounts/User Account/UserAccount';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/landingPage" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/" element={<Dashboard />} />
+          <Route path="/userAccount" element={<UserAccount />} />
         </Routes>
       </BrowserRouter>
     </div>
