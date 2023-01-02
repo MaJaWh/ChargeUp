@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+
+h3 {
+    font-family: 'raleway';
+    font-size: 3vw;
+    color: tomato;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form__outer {
+    background-color: none;
+    width: auto;
+    height: 100%;
+}
+
 .user-account__image {
     display: flex;
     align-items: center;
@@ -9,6 +24,81 @@
                   url("../../../images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+}
+
+.form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    padding: 8px;
+    margin: 20px;
+    background-color: rgba(250, 235, 215, 0.649);
+    border-radius: 15px;
+}
+
+.user-account__form-box{
+    background-color: rgba(240, 237, 238, 0.786);;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border-radius: 10px;
+    border: solid 4px white;
+    margin: 20px;
+}
+.user-account__btn__outer-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 20px;
+
+}
+.user-account__btn {
+    width: 20%;
+    all: unset;
+    cursor: pointer;
+    color: white;
+    font-family: 'raleway';
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    display: block;
+    margin-right: 10px;
+    background-color: tomato;
+    border-radius: 10px;
+
+}
+
+.user-account__btn:hover {
+    transform: scale(1.1);
+}
+
+.form-control {
+    width: 40%;
+    all: unset;
+    margin: 20px;
+    padding: 5px;
+    background-color: #5c604d43;
+    border-radius: 10px;
+    font-family: 'raleway'
+
+}
+
+.form-control:hover {
+    cursor: pointer;
+    background-color: #5c604d97;
+    transition: 200ms;
+}
+
+.user-account__back-btn__outer-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

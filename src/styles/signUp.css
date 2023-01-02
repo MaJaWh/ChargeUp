@@ -35,7 +35,7 @@ h3 {
     align-items:flex-end;
     padding: 8px;
     margin: 20px;
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.649);
     border-radius: 15px;
 }
 
@@ -46,6 +46,7 @@ h3 {
     align-items: center;
     width: 40%;
     border-radius: 10px;
+    border: solid 4px white
 }
 .btn__outer-box {
     display: flex;
@@ -75,7 +76,7 @@ h3 {
     all: unset;
     margin: 20px;
     padding: 5px;
-    background-color: #5c604d5e;
+    background-color: #5c604d43;
     border-radius: 10px;
 
 }

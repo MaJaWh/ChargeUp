@@ -11,9 +11,9 @@ function App() {
     <div className="wrapper">
       <BrowserRouter>
         <Routes>
-          <Route path="/landingPage" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/userAccount" element={<UserAccount />} />
         </Routes>
       </BrowserRouter>

@@ -47,11 +47,11 @@ h1 {
     border: 5px solid white;
 }
 
-/* .login__button-div {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-} */
+.login__button-div {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
 
 .login__button-box {
     width: 40%;

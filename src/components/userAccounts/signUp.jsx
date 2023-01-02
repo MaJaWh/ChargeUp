@@ -31,7 +31,7 @@ function CreateAccount() {
         const userResponse = await response.json()
         if(userResponse.token) {
             setToken(userResponse.token)
-            navigate('/')
+            navigate('/dashboard')
         } else {
             alert('User not created')
         }
@@ -91,7 +91,7 @@ function CreateAccount() {
                                         className="btn btn-primary"
                                     />
                                 </div>
-                            <Link to="/landingPage" className="btn">Go Back</Link>
+                            <Link to="/" className="btn">Go Back</Link>
                         </div>
                     </form>
                 </div>  
