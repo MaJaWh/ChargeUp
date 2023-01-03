@@ -19,6 +19,7 @@ function Map({ userCoords, chargeSites }) {
   const [accessibilityFlag, setAccessibilityFlag] = useState(null);
   const [inService, setInService] = useState(null);
   const [chargerStreet, setChargerStreet] = useState(null)
+  const [chargerPostcode, setChargerPostcode] = useState(null)
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY,
@@ -40,7 +41,7 @@ function Map({ userCoords, chargeSites }) {
           Accessible24Hours,
           ChargeDeviceStatus,
         } = charger;
-        const { Street } = charger.ChargeDeviceLocation.Address
+        const { Street, PostCode } = charger.ChargeDeviceLocation.Address
 
         return (
           <MarkerF
@@ -53,6 +54,7 @@ function Map({ userCoords, chargeSites }) {
               setAccessibilityFlag(Accessible24Hours);
               setInService(ChargeDeviceStatus);
               setChargerStreet(Street);
+              setChargerPostcode(PostCode)
             }}
             onMouseOut={() => {
               setPosition(null);
@@ -60,6 +62,7 @@ function Map({ userCoords, chargeSites }) {
               setAccessibilityFlag(null);
               setInService(null);
               setChargerStreet(null)
+              setChargerPostcode(null)
             }}
             key={charger.ChargeDeviceId}
             position={{ lat: Number(Latitude), lng: Number(Longitude) }}
@@ -67,6 +70,7 @@ function Map({ userCoords, chargeSites }) {
             accessibilityFlag={Accessible24Hours}
             inService={ChargeDeviceStatus}
             chargerStreet={Street}
+            chargerPostcode={PostCode}
           >
             {position === ChargeDeviceId && (
               <InfoWindowF
@@ -77,7 +81,8 @@ function Map({ userCoords, chargeSites }) {
                     size={70}
                   />
                    <div>
-                  {chargerStreet}
+                  <h4>{chargerStreet}</h4> 
+                  <h5>{chargerPostcode}</h5>
                   </div>
                   <div> Paid: {paymentFlag ? <MdPriceCheck className="payment-icon" size={18} /> : <TbFreeRights size={18} />}</div>
                   <div>
