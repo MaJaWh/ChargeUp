@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Map";
 import "../styles/search.css";
-import Filters from "./Filters";
+import PlugType from '../components/PlugType'
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
 const Search = ({ setchargeSites, setChargerStatus }) => {
@@ -60,7 +60,7 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
         {/* <GetConnectorStatus chargeSites={chargeSites}/> */}
       </form>
       <div className="search__filters">
-        <Filters/>
+        <PlugType/>
       </div>
     </div>
   );
