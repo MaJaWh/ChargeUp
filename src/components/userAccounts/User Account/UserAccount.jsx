@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './UserAccount.css'
+import useToken from '../../../customhooks/useToken'
 
 function UserAccount() {
 
-    const [newCar, setNewCar] = useState()
+    const { setToken } = useToken()
     const navigate = useNavigate()
 
-    const [form, setForm] = useState({
+    const [newCar, setNewCar] = useState({
+        make: "",
+        model: "",
+        plugtype: "",
+        powerrating: "",
+        maxdistance: "",
+    })
+
+
+    const [editForm, setEditForm] = useState({
         name: "",
         email: "",
         password: "",
         passwordConfirm: "",
     });
+
     const dashboardHandler= (event) => {
         event.preventDefault()
         navigate('/dashboard')
@@ -30,8 +41,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='name'
-                            value={form.name}
-                            onChange={(e) => setForm({...form, name: e.target.value })}
+                            value={editForm.name}
+                            onChange={(e) => setEditForm({...editForm, name: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
@@ -40,8 +51,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='email'
-                            value={form.email}
-                            onChange={(e) => setForm({...form,  email: e.target.value })}
+                            value={editForm.email}
+                            onChange={(e) => setEditForm({...editForm,  email: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
@@ -50,8 +61,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='password'
-                            value={form.password}
-                            onChange={(e) => setForm({...form, password: e.target.value })}
+                            value={editForm.password}
+                            onChange={(e) => setEditForm({...editForm, password: e.target.value })}
                             />
                         </div>
                         <div className='form-group'>
@@ -60,8 +71,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='passwordConfirmation'
-                            value={form.passwordConfirm}
-                            onChange={(e) => setForm({...form,  passwordConfirm: e.target.value })}
+                            value={editForm.passwordConfirm}
+                            onChange={(e) => setEditForm({...editForm,  passwordConfirm: e.target.value })}
                             />
                         </div>
                     </form>
@@ -94,8 +105,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='make'
-                            value={form.make}
-                            onChange={(e) => setNewCar({...form,  model: e.target.value })}
+                            value={newCar.make}
+                            onChange={(e) => setNewCar({ model: e.target.value })}
                             />
                     </div>
                     <div className='form-group'>
@@ -104,8 +115,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='make'
-                            value={form.model}
-                            onChange={(e) => setNewCar({...form,  model: e.target.value })}
+                            value={newCar.model}
+                            onChange={(e) => setNewCar({ model: e.target.value })}
                             />
                     </div>
                     <div className='form-group'>
@@ -114,8 +125,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='plugtype'
-                            value={form.plugtype}
-                            onChange={(e) => setNewCar({...form,  model: e.target.value })}
+                            value={newCar.plugtype}
+                            onChange={(e) => setNewCar({ model: e.target.value })}
                             />
                     </div>
                     <div className='form-group'>
@@ -124,8 +135,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='make'
-                            value={form.powerrating}
-                            onChange={(e) => setNewCar({...form,  model: e.target.value })}
+                            value={newCar.powerrating}
+                            onChange={(e) => setNewCar({ model: e.target.value })}
                             />
                     </div>
                     <div className='form-group'>
@@ -134,8 +145,8 @@ function UserAccount() {
                             type="text"
                             className='form-control'
                             id='make'
-                            value={form.maxdistance}
-                            onChange={(e) => setNewCar({...form,  model: e.target.value })}
+                            value={newCar.maxdistance}
+                            onChange={(e) => setNewCar({ model: e.target.value })}
                             />
                     </div>
                 </form>
