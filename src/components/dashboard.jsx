@@ -10,6 +10,7 @@ function Dashboard() {
   const [coordinates, setCoordinates] = useState({});
   const [chargerStatus, setChargerStatus] = useState("");
   const [plugFinder, setPlugFinder] = useState([]);
+  const [openSearchBar, setOpenSearchBar] = useState(false)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -23,14 +24,14 @@ function Dashboard() {
     <div className="dashboard-wrapper">
       <Header />
       <div className="dashboard_map-box">
-        <Search
+        {openSearchBar === true && (<Search
           className="dashboard_search"
           setchargeSites={setchargeSites}
           setChargerStatus={setChargerStatus}
           chargeSites={chargeSites}
           setPlugFinder={setPlugFinder}
           plugFinder={plugFinder}
-        />
+        />)}
         <Map
           className="dashboard_map"
           userCoords={coordinates}
@@ -38,7 +39,7 @@ function Dashboard() {
           chargerStatus={chargerStatus}
         />
       </div>
-      <Footer className="dashboard__footer" />
+      <Footer className="dashboard__footer" setOpenSearchBar={setOpenSearchBar}/>
     </div>
   );
 }

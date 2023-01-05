@@ -11,7 +11,7 @@ function Header() {
     const handleClick = (event) => {
         event.preventDefault()
         removeToken();
-        navigate('/landingPage')
+        navigate('/')
     }
 
     const handleUserAccount = (event) => {

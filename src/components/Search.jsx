@@ -5,15 +5,18 @@ import "../styles/search.css";
 import PlugType from '../components/PlugType'
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
-const Search = ({ setchargeSites, setChargerStatus }) => {
+const Search = ({ setchargeSites }) => {
   const [searchValue, setSearchValue] = useState("");
   const [distanceValue, setDistanceValue] = useState("");
   const [ratedOutput, setRatedOutput] = useState("");
+  const [returnedPlugType, setReturnedPlugType] = useState("")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     getData();
   };
+
+
 
   const getData = async () => {
     // console.log(searchValue, distanceValue, ratedOutput);
@@ -22,14 +25,18 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setchargeSites(data.ChargeDevice);
-        setChargerStatus(data.ChargeDevice);
-        console.log(data);
+        const chargingStations = data.ChargeDevice
+        console.log(chargingStations);
+        const filteredChargingStations = chargingStations.filter((plug) => plug.Connector?.[0]?.ConnectorType === returnedPlugType)
+        console.log(filteredChargingStations);
+
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+
   return (
     <div className="search">
       <div className="search__title">Search</div>
@@ -60,7 +67,7 @@ const Search = ({ setchargeSites, setChargerStatus }) => {
         {/* <GetConnectorStatus chargeSites={chargeSites}/> */}
       </form>
       <div className="search__filters">
-        <PlugType/>
+        <PlugType setReturnedPlugType={setReturnedPlugType}/>
       </div>
     </div>
   );

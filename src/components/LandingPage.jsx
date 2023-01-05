@@ -30,7 +30,7 @@ function LandingPage() {
     console.log(userLogin)
     if(userLogin.token) {
       setToken(userLogin.token)
-      navigate('/')
+      navigate('/dashboard')
     } else {
       alert('Please enter the correct password/email')
     }
