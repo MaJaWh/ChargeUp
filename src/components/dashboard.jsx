@@ -10,7 +10,7 @@ function Dashboard() {
   const [coordinates, setCoordinates] = useState({});
   const [chargerStatus, setChargerStatus] = useState("");
   const [plugFinder, setPlugFinder] = useState([]);
-  const [openSearchBar, setOpenSearchBar] = useState(false)
+  const [openSearchBar, setOpenSearchBar] = useState(true)
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
