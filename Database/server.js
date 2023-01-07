@@ -7,7 +7,11 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.urlencoded());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 // app.use(bodyParser.raw({ type: '*/*' }));
 
 dotenv.config({ path: './config.env' });
@@ -19,6 +23,7 @@ const DB = process.env.DATABASE.replace(
 
 mongoose
   .connect(DB, {
+    useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

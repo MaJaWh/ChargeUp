@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './UserAccount.css'
-import useToken from '../../../customhooks/useToken'
 
 function UserAccount() {
 
-    const { setToken } = useToken()
     const navigate = useNavigate()
 
     const [newCar, setNewCar] = useState({
@@ -28,6 +26,8 @@ function UserAccount() {
         event.preventDefault()
         navigate('/dashboard')
     }
+
+    
 
     return(
         <div className='user-account__outer'>
