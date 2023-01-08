@@ -1,10 +1,8 @@
 <a name="readme-top"></a>
 
-<div>
-[![Contributors][contributors-shield]][contributors-url]
-[![Downloads][download-badge]][download-url]
-[![LastCommit][commit-badge]][commit-url]
-</div>
+  [![Contributors][contributors-shield]][contributors-url]
+  [![Downloads][download-badge]][download-url]
+  [![LastCommit][commit-badge]][commit-url]
 
 <!-- PROJECT LOGO -->
 <h3 align="center">Charge Up</h3>
@@ -97,7 +95,7 @@ Please use the below to set of instructions to get your project up and running
 
 ###  Running the Development Server  
 
-1. Enter your API in `.env`
+1. Enter your API in `.env` in evtest.
       ```js
       const API_KEY = 'ENTER YOUR API';
       ```
@@ -110,16 +108,37 @@ Please use the below to set of instructions to get your project up and running
    $npm start
    ```    
 
+### Using The App
+
+1. Opening the app you will be directed to the LandingPage and asked to create a user.
+
+2. If you successfully create a user you will be directed to the dashboard.
+
+3. Here you get an alert askeing you to allow location services and the map shoudl center on your location.
+
+4. You can then enter your home town and set the distance in miles you would liket o search from your location.
+
+5. Pressing the plug type button you can then toggle on and off the locations which match your plug type. Some plug types are more popular than others.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+### Usage Examples
 
-<!-- CONTACT -->
+### Roadmap
+
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+    - [ ] Nested Feature
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle)
+Mark Whitehead - [@twitter_handle](https://twitter.com/twitter_handle)
+Ben Seed - []()
 
 Project Link: [https://github.com/MaJaWh/evtest](https://github.com/MaJaWh/evtest)
 
@@ -161,14 +180,4 @@ Project Link: [https://github.com/MaJaWh/evtest](https://github.com/MaJaWh/evtes
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-url]: https://reactjs.org/
 [vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[vue-url]: https://vuejs.org/
-[angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[angular-url]: https://angular.io/
-[svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[svelte-url]: https://svelte.dev/
-[laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[laravel-url]: https://laravel.com
-[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[bootstrap-url]: https://getbootstrap.com
-[jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[jquery-url]: https://jquery.com
+
