@@ -79,7 +79,7 @@ Please use the below to set of instructions to get your project up and running
 
 1. Clone the repo into your chosen file
    ```sh
-   git clone https://github.com/MaJaWh/weather-app
+   git clone https://github.com/MaJaWh/evtest
    ```
 2. Install NPM packages
    ```sh
@@ -112,7 +112,7 @@ Please use the below to set of instructions to get your project up and running
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle)
 
-Project Link: [https://github.com/MaJaWh/weather-app](https://github.com/MaJaWh/weather-app)
+Project Link: [https://github.com/MaJaWh/evtest](https://github.com/MaJaWh/evtest)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,10 +120,10 @@ Project Link: [https://github.com/MaJaWh/weather-app](https://github.com/MaJaWh/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[download-badge]: https://img.shields.io/github/downloads/MaJaWh/music-library/total
-[download-url]: https://github.com/MaJaWh/music-library
-[commit-badge]: https://img.shields.io/github/last-commit/MaJAWh/music-library
-[commit-url]: https://github.com/MaJaWh/music-library
+[download-badge]: https://img.shields.io/github/downloads/MaJaWh/evtest/total
+[download-url]: https://github.com/MaJaWh/evtest
+[commit-badge]: https://img.shields.io/github/last-commit/MaJAWh/evtest
+[commit-url]: https://www.github.com/MaJaWh/evtest
 [javascript-url]: https://www.javascript.com/
 [javascript-shield]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [CSS]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
