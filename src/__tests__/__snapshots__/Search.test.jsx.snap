@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search-snapshot renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="search"
+  >
+    <div
+      class="search__title"
+    >
+      Search
+    </div>
+    <form
+      class="search-form"
+    >
+      <input
+        class="search-input"
+        placeholder="postcode"
+        type="text"
+      />
+      <input
+        class="search-input"
+        placeholder="Distance from location"
+        type="text"
+      />
+      <input
+        class="search-input"
+        placeholder="kw/h of car"
+        type="text"
+      />
+      <div
+        class="search__filters"
+      >
+        <div
+          class="plugtype__outer-div"
+        />
+      </div>
+      <button
+        class="search-btn"
+        type="submit"
+      >
+        Find!
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
