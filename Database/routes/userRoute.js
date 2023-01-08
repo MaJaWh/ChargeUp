@@ -10,15 +10,12 @@ router.post('/login', authController.login);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword', authController.resetPassword);
 
-// router.route('/').post(userController.createUser);
+// router.route('/createUser').post(userController.createUser);
 
-router.route('/').get(authController.protect);
+router.route('/dashboard').get(authController.protect);
 
 router.route('/:id').get(userController.getUser);
 
 router.route('/userAccount').get(authController.protect);
-
-//   .patch(userController.updateUser)
-//   .delete(userController.deleteUser);
 
 module.exports = router;
