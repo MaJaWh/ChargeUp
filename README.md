@@ -12,7 +12,7 @@
   </a>
 
 
-<h3 align="center">Charge Up</h3>
+<h1 align="center">Charge Up</h1>
 
   <p align="center">
     A simple app linked to the government Vehicle Charging API. Chargers can be filtered on distance from location and plug type. You can also create a user account and sign in and out using email and password
@@ -136,6 +136,19 @@ Please use the below to set of instructions to get your project up and running
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Usage Examples
+
+<div align="center">
+  <a href="https://github.com/MaJaWh/evtest">
+    <img src="./src/images/Reduced images/loginImage.jpg" alt="Logo" width="250" height="auto">
+  </a>
+<div align="center">
+  <a href="https://github.com/MaJaWh/evtest">
+    <img src="./src/images/Reduced images/dashboardWithFlag.jpg" alt="Logo" width="250" height="auto">
+  </a>
+<div align="center">
+  <a href="https://github.com/MaJaWh/evtest">
+    <img src="./src/images/Reduced images/acccountPage.jpg" alt="Logo" width="250" height="auto">
+  </a>
 
 ### Roadmap
 
