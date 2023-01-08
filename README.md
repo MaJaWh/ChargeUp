@@ -48,7 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-    The final project of our Manchester Codes Software Engineering Bootcamp. We tasked ourselves with putting together an app which could search any country in the world for all the EV charging sites. We hoped it would then be possible to use various filter methods to find and navigate to your desired charging station. We hoped to build the frontend using React and the native React Testing Library. The backend would be built using Express, Mongoose and MongoDB. Using the MERN stack we hoped that we would have pleanty of up to date documentation to work from.
+  The final project of our Manchester Codes Software Engineering Bootcamp. We tasked ourselves with putting together an app which could search any country in the world for all the EV charging sites. We hoped it would then be possible to use various filter methods to find and navigate to your desired charging station. We hoped to build the frontend using React and the native React Testing Library. The backend would be built using Express, Mongoose and MongoDB. Using the MERN stack we hoped that we would have pleanty of up to date documentation to work from.
     
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
