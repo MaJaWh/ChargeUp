@@ -139,25 +139,26 @@ Please use the below to set of instructions to get your project up and running
 
 <div align="center">
   <a href="https://github.com/MaJaWh/evtest">
-    <img src="./src/images/Reduced images/loginImage.jpg" alt="Logo" width="250" height="auto">
+    <img src="./src/images/Reduced images/loginImage.jpg" alt="Logo" width="400" height="auto">
   </a>
 </div>  
 
 
 <div align="center">
   <a href="https://github.com/MaJaWh/evtest">
-    <img src="./src/images/Reduced images/dashboardWithFlag.jpg" alt="Logo" width="250" height="auto">
+    <img src="./src/images/Reduced images/dashboardWithFlag.jpg" alt="Logo" width="400" height="auto">
   </a>
 </div>
 
 <div align="center">
   <a href="https://github.com/MaJaWh/evtest">
-    <img src="./src/images/Reduced images/acccountPage.jpg" alt="Logo" width="250" height="auto">
+    <img src="./src/images/Reduced images/acccountPage.jpg" alt="Logo" width="400" height="auto">
   </a>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- Roadmap -->
+
 ### Roadmap
 
  #### Frontend
