@@ -3,3 +3,27 @@
     width: 100%;
     height: 100%
 }
+
+.battery-icon {
+    color: green;
+}
+
+.battery-icon-empty {
+    color: red;
+}
+
+.clock-icon {
+ color: green;
+}
+
+.clock-icon-none {
+    color: red;
+}
+
+.payment-icon {
+    color: green;
+}
+
+.payment-icon-none {
+    color: red;
+}
