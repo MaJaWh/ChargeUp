@@ -33,15 +33,6 @@ const PlugType = ({ setReturnedPlugType }) => {
       });
   }, []);
 
-  //Learn how to mock the fetch api
-  //Mock the constructor
-
-  //on etest to check that searchbytext on the connector type
-
-  //assert that when one of the buttons id clicked that setreturnplug type is returned with the data
-
-  //searchbyrole---button
-
   const handleClick = (plug) => setReturnedPlugType(plug);
 
   return (
