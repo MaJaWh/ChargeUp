@@ -81,7 +81,11 @@ Please use the below to set of instructions to get your project up and running
    ```sh
    git clone https://github.com/MaJaWh/evtest
    ```
-2. Install NPM packages
+2. CD into database and Install NPM packages
+   ```sh
+   npm install
+   ```
+3. CD into evtest and Install NPM packages
    ```sh
    npm install
    ```
@@ -93,14 +97,20 @@ Please use the below to set of instructions to get your project up and running
    ```
 
 ###  Running the Development Server  
-- npm
+
+1. Enter your API in `.env`
+      ```js
+      const API_KEY = 'ENTER YOUR API';
+      ```
+2. From evtest run
    ```sh
    npm start
    ```    
-   <!-- 3. Enter your API in `config.js`
-      ```js
-      const API_KEY = 'ENTER YOUR API';
-      ``` -->
+3. From database run
+   ```sh
+   npm start
+   ```    
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
