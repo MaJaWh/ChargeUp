@@ -6,9 +6,9 @@ import PlugType from '../components/PlugType';
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
 const Search = ({ setchargeSites, setReturnedPlugType }) => {
-  const [searchValue, setSearchValue] = useState('');
+  // const [searchValue, setSearchValue] = useState('');
   const [distanceValue, setDistanceValue] = useState('');
-  const [ratedOutput, setRatedOutput] = useState('');
+  const [postTown, setPostTown] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,7 +17,7 @@ const Search = ({ setchargeSites, setReturnedPlugType }) => {
 
   const getData = async () => {
     fetch(
-      `/api/retrieve/registry/postcode/${searchValue}/dist/${distanceValue}/rated-output-kw/${ratedOutput}/format/json`
+      `/api/retrieve/registry/dist/${distanceValue}/post-town/${postTown}/format/json`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -33,12 +33,12 @@ const Search = ({ setchargeSites, setReturnedPlugType }) => {
     <div className="search">
       <div className="search__title">Search</div>
       <form className="search-form" onSubmit={handleSubmit}>
-        <input
+        {/* <input
           className="search-input"
           type="text"
           placeholder="postcode"
           onChange={(e) => setSearchValue(e.target.value)}
-        />
+        /> */}
         <input
           className="search-input"
           type="text"
@@ -49,8 +49,8 @@ const Search = ({ setchargeSites, setReturnedPlugType }) => {
         <input
           className="search-input"
           type="text"
-          placeholder="kw/h of car"
-          onChange={(e) => setRatedOutput(e.target.value)}
+          placeholder="Town"
+          onChange={(e) => setPostTown(e.target.value)}
         />
         <div className="search__filters">
           <PlugType setReturnedPlugType={setReturnedPlugType} />
