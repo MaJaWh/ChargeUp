@@ -137,29 +137,34 @@ Please use the below to set of instructions to get your project up and running
 
 ### Usage Examples
 
-<div align="center">
+<div align="left">
   <a href="https://github.com/MaJaWh/evtest">
     <img src="./src/images/Reduced images/loginImage.jpg" alt="Logo" width="400" height="auto">
   </a>
 </div>  
 
 
-<div align="center">
+<div align="right">
   <a href="https://github.com/MaJaWh/evtest">
     <img src="./src/images/Reduced images/dashboardWithFlag.jpg" alt="Logo" width="400" height="auto">
   </a>
 </div>
 
-<div align="center">
+<div align="left">
   <a href="https://github.com/MaJaWh/evtest">
     <img src="./src/images/Reduced images/acccountPage.jpg" alt="Logo" width="400" height="auto">
   </a>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 <!-- Roadmap -->
 
-### Roadmap
+
+
+## Roadmap
 
  #### Frontend
 - [ ] Create a more informative landing page
@@ -180,7 +185,7 @@ Please use the below to set of instructions to get your project up and running
 
 ## Contact
 
-Mark Whitehead - [@twitter_handle](https://twitter.com/twitter_handle)
+Mark Whitehead - [@mjamesw2010](https://twitter.com/@mjamesw2010)
 
 Ben Seed - []()
 
