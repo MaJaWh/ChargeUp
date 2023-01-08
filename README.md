@@ -8,7 +8,7 @@
 
 <div align="center">
   <a href="https://github.com/MaJaWh/evtest">
-    <img src="./src/images/Reduced images/loginCloseUp(1).jpg" alt="Logo" width="160" height="auto">
+    <img src="./src/images/Reduced images/loginCloseUp(1).jpg" alt="Logo" width="250" height="auto">
   </a>
 
 
