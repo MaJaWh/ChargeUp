@@ -1,9 +1,10 @@
 <a name="readme-top"></a>
 
-
+<div>
 [![Contributors][contributors-shield]][contributors-url]
 [![Downloads][download-badge]][download-url]
 [![LastCommit][commit-badge]][commit-url]
+</div>
 
 <!-- PROJECT LOGO -->
 <h3 align="center">Charge Up</h3>
@@ -11,12 +12,10 @@
   <p align="center">
     A simple app linked to the government Vehicle Charging API. Chargers can be filtered on distance from location and plug type. You can also create a user account and sign in and out using email and password
     <br />
-    <!-- <a hre  <a href="https://github.com/github_username/repo_name">View Demo</a> -->
     ·
     <a href="https://github.com/MaJaWh/evtest">Report Bug</a>
     ·
-    <!-- <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
-  </p> -->
+  </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -79,21 +78,21 @@ Please use the below to set of instructions to get your project up and running
 
 1. Clone the repo into your chosen file
    ```sh
-   git clone https://github.com/MaJaWh/evtest
+   $git clone https://github.com/MaJaWh/evtest
    ```
 2. CD into database and Install NPM packages
    ```sh
-   npm install
+   $npm install
    ```
 3. CD into evtest and Install NPM packages
    ```sh
-   npm install
+   $npm install
    ```
 
 ### Testing   
 - Testing
    ```sh
-   npm test
+   $npm test
    ```
 
 ###  Running the Development Server  
@@ -104,11 +103,11 @@ Please use the below to set of instructions to get your project up and running
       ```
 2. From evtest run
    ```sh
-   npm start
+   $npm start
    ```    
 3. From database run
    ```sh
-   npm start
+   $npm start
    ```    
 
 
