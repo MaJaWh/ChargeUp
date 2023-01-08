@@ -1,7 +1,7 @@
 import Chad from '../assets/images/chademo.png';
 import Caravan from '../assets/images/caravan-mains.png';
 import Commando from '../assets/images/commando.png';
-import J1772 from '../assets/images/j1772.png';
+// import J1772 from '../assets/images/j1772.png';
 import Roadster from '../assets/images/roadster.png';
 import Tesla from '../assets/images/tesla.png';
 import Type2 from '../assets/images/type2main.png';

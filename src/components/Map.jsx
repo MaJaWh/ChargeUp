@@ -7,7 +7,7 @@ import {
   MarkerF,
   InfoWindowF,
 } from '@react-google-maps/api';
-import { RiChargingPileFill, Ri24HoursLine } from 'react-icons/ri';
+import { Ri24HoursLine } from 'react-icons/ri';
 import { MdPriceCheck } from 'react-icons/md';
 import { FaBatteryFull, FaBatteryEmpty } from 'react-icons/fa';
 import { TbFreeRights } from 'react-icons/tb';
@@ -21,7 +21,6 @@ function Map({ userCoords, chargeSites }) {
   const [chargerStreet, setChargerStreet] = useState(null);
   const [chargerPostcode, setChargerPostcode] = useState(null);
   const [chargerBuilding, setChargerBuilding] = useState(null);
-
 
   console.log('------', chargeSites);
 
@@ -45,7 +44,8 @@ function Map({ userCoords, chargeSites }) {
           Accessible24Hours,
           ChargeDeviceStatus,
         } = charger;
-        const { Street, PostCode, BuildingName } = charger.ChargeDeviceLocation.Address;
+        const { Street, PostCode, BuildingName } =
+          charger.ChargeDeviceLocation.Address;
 
         return (
           <MarkerF
@@ -59,7 +59,7 @@ function Map({ userCoords, chargeSites }) {
               setInService(ChargeDeviceStatus);
               setChargerStreet(Street);
               setChargerPostcode(PostCode);
-              setChargerBuilding(BuildingName)
+              setChargerBuilding(BuildingName);
             }}
             onMouseOut={() => {
               setPosition(null);
@@ -68,7 +68,7 @@ function Map({ userCoords, chargeSites }) {
               setInService(null);
               setChargerStreet(null);
               setChargerPostcode(null);
-              setChargerBuilding(null)
+              setChargerBuilding(null);
             }}
             key={charger.ChargeDeviceId}
             position={{ lat: Number(Latitude), lng: Number(Longitude) }}
@@ -77,7 +77,7 @@ function Map({ userCoords, chargeSites }) {
             inService={ChargeDeviceStatus}
             chargerStreet={Street}
             chargerPostcode={PostCode}
-            chargerBuilding={BuildingName}
+            chargerBuilding={chargerBuilding}
           >
             {position === ChargeDeviceId && (
               <InfoWindowF
@@ -113,7 +113,10 @@ function Map({ userCoords, chargeSites }) {
                     {inService ? (
                       <FaBatteryFull className="battery-icon" size={18} />
                     ) : (
-                      <FaBatteryEmpty className="battery-icon-empty" size={18} />
+                      <FaBatteryEmpty
+                        className="battery-icon-empty"
+                        size={18}
+                      />
                     )}
                   </div>
                 </div>

@@ -5,6 +5,13 @@
   [![LastCommit][commit-badge]][commit-url]
 
 <!-- PROJECT LOGO -->
+
+<div align="center">
+  <a href="https://github.com/MaJaWh/evtest">
+    <img src="./src/images/Reduced images/loginCloseUp(1).jpg" alt="Logo" width="80" height="80">
+  </a>
+
+
 <h3 align="center">Charge Up</h3>
 
   <p align="center">
@@ -95,14 +102,17 @@ Please use the below to set of instructions to get your project up and running
 
 ###  Running the Development Server  
 
-1. Enter your API in `.env` in evtest.
+1. Enter your API in `.env` in evtest. If you dont have an API key you will see a development only map
       ```js
-      const API_KEY = 'ENTER YOUR API';
+      REACT_APP_GOOGLE_MAPS_EMBED_API_KEY = 'ENTER YOUR API';
       ```
 2. From evtest run
    ```sh
    $npm start
    ```    
+
+### Running the Server
+
 3. From database run
    ```sh
    $npm start
@@ -120,6 +130,8 @@ Please use the below to set of instructions to get your project up and running
 
 5. Pressing the plug type button you can then toggle on and off the locations which match your plug type. Some plug types are more popular than others.
 
+6. If you like you can remove the search window by clicking the SearchForm button at the bottom of the page.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,10 +139,19 @@ Please use the below to set of instructions to get your project up and running
 
 ### Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
+ #### Frontend
+- [ ] Create a more informative landing page
+- [ ] 
 - [ ] Feature 3
     - [ ] Nested Feature
+
+ #### Backend
+- [ ] Complete reset password function
+- [ ] Complete add a new car route
+    - [ ] Add an 'update users car' route
+- [ ] Create function so the user can add an image to thir profile.
+    - [ ] Display the users image on the header bar.
+- [ ] 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,6 +159,7 @@ Please use the below to set of instructions to get your project up and running
 ## Contact
 
 Mark Whitehead - [@twitter_handle](https://twitter.com/twitter_handle)
+
 Ben Seed - []()
 
 Project Link: [https://github.com/MaJaWh/evtest](https://github.com/MaJaWh/evtest)
