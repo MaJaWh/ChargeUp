@@ -136,8 +136,8 @@ Project Link: [https://github.com/MaJaWh/evtest](https://github.com/MaJaWh/evtes
 [express-url]: https://expressjs.com/
 [mysql-shield]: https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white
 [mysql-url]: https://www.mysql.com/
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/MaJaWh/evtest.svg?style=for-the-badge
+[contributors-url]: https://github.com/MaJaWh/evtest/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
