@@ -1,129 +1,65 @@
-import React, { useState } from "react";
-import Chad from "../assets/images/chademo.png";
-import Caravan from "../assets/images/caravan-mains.png";
-import Commando from "../assets/images/commando.png";
-import J1772 from "../assets/images/j1772.png";
-import Roadster from "../assets/images/roadster.png";
-import Tesla from "../assets/images/tesla.png";
-import Type2 from "../assets/images/type2main.png";
-import Type3 from "../assets/images/type3.png";
-import Wall from "../assets/images/wall-bs1363.png";
-import "../styles/plugType.css";
-import "../components/Map";
+import React, { useEffect, useState } from 'react';
+import Chad from '../assets/images/chademo.png';
+import Caravan from '../assets/images/caravan-mains.png';
+import Commando from '../assets/images/commando.png';
+import J1772 from '../assets/images/j1772.png';
+import Roadster from '../assets/images/roadster.png';
+import Tesla from '../assets/images/tesla.png';
+import Type2 from '../assets/images/type2main.png';
+import Type3 from '../assets/images/type3.png';
+import Wall from '../assets/images/wall-bs1363.png';
+import '../styles/plugType.css';
+import '../components/Map';
+
+const PLUG_ASSET_MAP = {
+  4: Chad,
+  5: Caravan,
+  6: Wall,
+  7: Type3,
+  15: Type2,
+  16: Tesla,
+  17: Commando,
+  18: Roadster,
+};
 
 const PlugType = ({ setReturnedPlugType }) => {
-  const [plug, setPlug] = useState();
+  const [plugData, setPlugData] = useState([]);
 
-  const getPlugData = async () => {
+  useEffect(() => {
     fetch(`api/retrieve/type/format/json/`)
       .then((res) => res.json())
       .then((data) => {
-        setPlug(data.ConnectorType);
+        setPlugData(Object.values(data.ConnectorType));
       });
-  };
+  }, []);
 
-  const handleClick1 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 3)
-    );
-  };
-  const handleClick2 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 4)
-    );
-  };
-  const handleClick3 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 5)
-    );
-  };
-  const handleClick4 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 16)
-    );
-  };
-  const handleClick5 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 16)
-    );
-  };
-  const handleClick6 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 6)
-    );
-  };
-  const handleClick7 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 7)
-    );
-  };
-  const handleClick8 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 17)
-    );
-  };
-  const handleClick9 = () => {
-    getPlugData();
-    setReturnedPlugType(
-      Object.values(plug).find((obj) => obj.ConnectorTypeID === 3)
-    );
-  };
+  //Learn how to mock the fetch api
+  //Mock the constructor
+
+  //on etest to check that searchbytext on the connector type
+
+  //assert that when one of the buttons id clicked that setreturnplug type is returned with the data
+
+  //searchbyrole---button
+
+  const handleClick = (plug) => setReturnedPlugType(plug);
 
   return (
-    <>
-      <div className="plugtype__outer-div">
-        <button onClick={handleClick2}>
-          Click for Results
-          <img className="img__btn" src={Chad} size="" alt="Chademo plug"></img>
-          ChadEmo
-        </button>
-        <button onClick={handleClick9}>
-          <img
-            className="img__btn"
-            src={Caravan}
-            size=""
-            alt="Caravan Mains"
-          ></img>
-          Caravan Mains
-        </button>
-        <button onClick={handleClick8}>
-          <img className="img__btn" src={Commando} alt="Commando"></img>
-          Commando
-        </button>
-        <button onClick={handleClick3}>
-          <img className="img__btn" src={J1772} alt="J1772"></img>
-          J1772
-        </button>
-        <button onClick={handleClick4}>
-          <img className="img__btn" src={Roadster} alt="Roadster"></img>
-          Roadster
-        </button>
-        <button onClick={handleClick5}>
-          <img className="img__btn" src={Tesla} alt="Tesla"></img>
-          Tesla
-        </button>
-        <button onClick={handleClick6}>
-          <img className="img__btn" src={Type2} alt="Type2"></img>
-          Type2
-        </button>
-        <button onClick={handleClick7}>
-          <img className="img__btn" src={Type3} alt="Type3"></img>
-          Type3
-        </button>
-        <button onClick={handleClick1}>
-          <img className="img__btn" src={Wall} alt="Wall"></img>
-          Wall
-        </button>
-      </div>
-    </>
+    <div className="plugtype__outer-div">
+      {plugData.map((plug) => {
+        return (
+          <button key={plug.ConnectorTypeID} onClick={() => handleClick(plug)}>
+            <img
+              className="img__btn"
+              src={PLUG_ASSET_MAP[plug.ConnectorTypeID]}
+              size=""
+              alt={plug.ConnectorType}
+            ></img>
+            {plug.ConnectorType}
+          </button>
+        );
+      })}
+    </div>
   );
 };
 

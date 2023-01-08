@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import "./Map";
-import "../styles/search.css";
-import PlugType from "../components/PlugType";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import './Map';
+import '../styles/search.css';
+import PlugType from '../components/PlugType';
 // import GetConnectorStatus from "./requests/GetConnectorStatus";
 
-const Search = ({ setchargeSites, chargeSites }) => {
-  const [searchValue, setSearchValue] = useState("");
-  const [distanceValue, setDistanceValue] = useState("");
-  const [ratedOutput, setRatedOutput] = useState("");
-  const [returnedPlugType, setReturnedPlugType] = useState("");// add this in state as a test ---> "Type 2 Mennekes (IEC62196)"
+const Search = ({ setchargeSites, setReturnedPlugType }) => {
+  const [searchValue, setSearchValue] = useState('');
+  const [distanceValue, setDistanceValue] = useState('');
+  const [ratedOutput, setRatedOutput] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,20 +16,14 @@ const Search = ({ setchargeSites, chargeSites }) => {
   };
 
   const getData = async () => {
-    // console.log(searchValue, distanceValue, ratedOutput);
     fetch(
       `/api/retrieve/registry/postcode/${searchValue}/dist/${distanceValue}/rated-output-kw/${ratedOutput}/format/json`
     )
       .then((res) => res.json())
       .then((data) => {
-        // setchargeSites(data.ChargeDevice);
-        const filteredSites = data.ChargeDevice.filter(
-          (site) => site.Connector[0].ConnectorType === returnedPlugType // add instead of returnedPlugType for test ---> "Type 2 Mennekes (IEC62196)"
-        );
-        setchargeSites(filteredSites);
-        console.log(filteredSites, "<-----filteredSites");
-        console.log(returnedPlugType, "<----returnedPlugType");
+        setchargeSites(data.ChargeDevice);
       })
+
       .catch((err) => {
         console.log(err);
       });
