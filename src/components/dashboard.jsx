@@ -11,10 +11,7 @@ function Dashboard() {
   const [chargerStatus, setChargerStatus] = useState('');
   const [plugFinder, setPlugFinder] = useState([]);
   const [openSearchBar, setOpenSearchBar] = useState(true);
-  const [returnedPlugType, setReturnedPlugType] = useState(''); // add this in state as a test ---> "Type 2 Mennekes (IEC62196)"
-
-  console.log(chargeSites);
-  console.log(returnedPlugType);
+  const [returnedPlugType, setReturnedPlugType] = useState('');
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(

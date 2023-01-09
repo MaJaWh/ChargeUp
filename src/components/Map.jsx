@@ -22,8 +22,6 @@ function Map({ userCoords, chargeSites }) {
   const [chargerPostcode, setChargerPostcode] = useState(null);
   const [chargerBuilding, setChargerBuilding] = useState(null);
 
-  console.log('------', chargeSites);
-
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_EMBED_API_KEY,
   });
@@ -81,7 +79,10 @@ function Map({ userCoords, chargeSites }) {
           >
             {position === ChargeDeviceId && (
               <InfoWindowF
-                position={{ lat: Number(Latitude), lng: Number(Longitude) }}
+                position={{
+                  lat: parseFloat(Latitude),
+                  lng: parseFloat(Longitude),
+                }}
               >
                 <div>
                   {/* <RiChargingPileFill size={70} /> */}
