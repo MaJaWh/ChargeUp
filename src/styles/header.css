@@ -36,7 +36,7 @@ h2 {
      margin-right: 35px;
 }
 
-.footer__button {
+.header__btn {
     all: unset;
     cursor: pointer;
     background-color: rgb(158, 157, 157);
@@ -48,4 +48,17 @@ h2 {
     font-weight: bold;
     border: none;
     margin-right: 20px;
+    box-shadow:rgb(10px 5px 5px black);
+
+}
+
+@media only screen and (max-width: 360px) {
+    h2{
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    .header__btn {
+        font-size: 5px;
+    }
 }

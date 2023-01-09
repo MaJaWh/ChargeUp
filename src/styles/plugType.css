@@ -1,9 +1,27 @@
 .plugtype__outer-div {
     width: 100%;
     display: inline-grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto auto auto;
+    margin-top: 20%;
 }
 
+.plugButton {
+    margin: 2px;
+    background-color: rgba(216, 213, 213, 0.78);
+}
+.plugButton:hover {
+    margin: 2px;
+    background-color: rgba(227, 226, 225, 0.545);
+    border: 2px solid tomato
+}
+
+.img__btn {
+    width: 80%;
+}
+.img__btn:hover {
+    transform:  scale(1.1);
+}
 /* .plug_types {
     margin: auto;
     max-width: 200px;
@@ -12,6 +30,6 @@
     flex-shrink: 1;
 } */
 
-img {
-    height: 40px;
-}
+/* img {
+    height: 30%;
+} */

@@ -12,16 +12,17 @@
     border: 4px solid white
 }
 
-.header__btn {
+.footer__button {
     all: unset;
     cursor: pointer;
     background-color: rgb(158, 157, 157);
     border-radius: 8px;
-    color: #e5e5e5;
+    color: #f2f1f1;
     text-align: center;
     padding: 6px 10px 6px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
     border: none;
     margin-right: 20px;
+    box-shadow:rgb(10px 5px 5px black);
 }

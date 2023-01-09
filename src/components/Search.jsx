@@ -31,36 +31,33 @@ const Search = ({ setchargeSites, setReturnedPlugType }) => {
 
   return (
     <div className="search">
-      <div className="search__title">Search</div>
-      <form className="search-form" onSubmit={handleSubmit}>
-        {/* <input
-          className="search-input"
-          type="text"
-          placeholder="postcode"
-          onChange={(e) => setSearchValue(e.target.value)}
-        /> */}
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Distance from location"
-          onChange={(e) => setDistanceValue(e.target.value)}
-        />
+      <div className="search-form__inner-div">
+        <div className="search__title">Search</div>
+        <form className="search-form" onSubmit={handleSubmit}>
+          <div>
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Distance from location"
+              onChange={(e) => setDistanceValue(e.target.value)}
+            />
 
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Town"
-          onChange={(e) => setPostTown(e.target.value)}
-        />
-        <div className="search__filters">
-          <PlugType setReturnedPlugType={setReturnedPlugType} />
-        </div>
-        <button className="search-btn" type="submit">
-          Find!
-        </button>
-
-        {/* <GetConnectorStatus chargeSites={chargeSites}/> */}
-      </form>
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Town"
+              onChange={(e) => setPostTown(e.target.value)}
+            />
+            <PlugType
+              className="plugButtons"
+              setReturnedPlugType={setReturnedPlugType}
+            />
+          </div>
+          <button className="search-btn" type="submit">
+            Find!
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

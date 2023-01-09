@@ -20,7 +20,11 @@ const PlugType = ({ setReturnedPlugType }) => {
     <div className="plugtype__outer-div">
       {plugData.map((plug) => {
         return (
-          <button key={plug.ConnectorTypeID} onClick={() => handleClick(plug)}>
+          <button
+            className="plugButton"
+            key={plug.ConnectorTypeID}
+            onClick={() => handleClick(plug)}
+          >
             <img
               className="img__btn"
               src={PLUG_ASSET_MAP[plug.ConnectorTypeID]}
