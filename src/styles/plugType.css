@@ -1,14 +1,35 @@
 .plugtype__outer-div {
     width: 100%;
-    display: inline-grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto auto auto;
+    display: grid;
+    grid-template-areas: "auto auto auto ";
+    grid-auto-rows: 100%;
+    gap: 10px;
     margin-top: 20%;
 }
 
+@media screen and (max-width: 1044px) {
+    .plugtype__outer-div {
+        width: 100%;
+        display: grid;
+        grid-template-areas: "a a";
+        grid-auto-rows: 100%;
+        gap: 5px;
+        margin-top: 20%;
+    }
+}
+
 .plugButton {
+    width: 90%;
     margin: 2px;
     background-color: rgba(216, 213, 213, 0.78);
+}
+@media screen and (max-width: 1044px) {
+    .plugButton {
+        font-size: 5px;
+        width: 90%;
+        margin: 1px;
+        background-color: rgba(216, 213, 213, 0.78);
+    }
 }
 .plugButton:hover {
     margin: 2px;
@@ -16,8 +37,9 @@
     border: 2px solid tomato
 }
 
+
 .img__btn {
-    width: 80%;
+    width: 70%;
 }
 .img__btn:hover {
     transform:  scale(1.1);

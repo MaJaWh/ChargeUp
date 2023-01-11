@@ -26,3 +26,10 @@
     margin-right: 20px;
     box-shadow:rgb(10px 5px 5px black);
 }
+
+@media only screen and (max-width: 620px) {
+    .footer__button {
+        font-size: 11px;
+        margin-right: 8px;
+    }
+}

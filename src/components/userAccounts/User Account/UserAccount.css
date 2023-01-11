@@ -12,7 +12,7 @@ h3 {
 .user-account__outer {
     background-color: none;
     width: auto;
-    height: 100%;
+    height: auto;
 }
 
 .user-account__image {
@@ -24,20 +24,36 @@ h3 {
                   url("../../../images/xavier-l-_3xRXB_CF5w-unsplash\(2\).jpg");
     background-position: center;
     background-repeat: no-repeat;
-    height: 100%;
+    height: auto;
     width: 100%;
 }
+
 
 .form {
     width: 70%;
     display: flex;
     flex-direction: column;
-    align-items:flex-end;
+    align-items:center;
     padding: 8px;
     margin: 20px;
     background-color: rgba(250, 235, 215, 0.649);
     border-radius: 15px;
 }
+
+.form-group {
+    font-family: 'raleway';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width: 1185px) {
+    .form-group {
+        font-size: 10px;
+        flex-direction: column;
+    }
+}
+
 
 .user-account__form-box{
     background-color: rgba(240, 237, 238, 0.786);;
@@ -57,6 +73,17 @@ h3 {
     margin: 20px;
 
 }
+
+@media screen and (max-width: 636px) {
+    .user-account__btn__outer-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 20px;
+    
+    }
+}
 .user-account__btn {
     width: 20%;
     all: unset;
@@ -70,8 +97,17 @@ h3 {
     margin-right: 10px;
     background-color: tomato;
     border-radius: 10px;
-
+    
 }
+
+
+@media screen and (max-width: 832px) {
+   .user-account__btn {
+    font-size: 10px;
+    margin: 5px;
+    max-width: 60%;
+   }
+  }
 
 .user-account__btn:hover {
     transform: scale(1.1);
@@ -84,14 +120,28 @@ h3 {
     padding: 5px;
     background-color: #5c604d43;
     border-radius: 10px;
-    font-family: 'raleway'
+    font-family: 'raleway';
+    caret-color: transparent;
+    text-align: center;
 
+}
+
+@media screen and (max-width: 636px) {
+    .form-control {
+        width: 70%;
+        margin-top: 6px;
+        padding: 2px;    
+    }
 }
 
 .form-control:hover {
     cursor: pointer;
     background-color: #5c604d97;
     transition: 200ms;
+}
+
+.form-control:focus {
+    outline: 2px solid tomato;
 }
 
 .user-account__back-btn__outer-box {

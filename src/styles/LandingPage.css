@@ -73,6 +73,7 @@ h1 {
     margin-right: 10px;
     background-color: tomato;
     border-radius: 10px;
+    transition: 0.5s;
 }
 
 .login__button:hover {
@@ -87,13 +88,20 @@ h1 {
 }
 
 .login__input-field {
-    width: 40%;
+    width: 90%;
     all: unset;
     margin-left: 20px;
     padding: 5px;
     background-color: #5c604d5e;
     border-radius: 10px;
+    font-family: 'raleway';
+    caret-color: transparent;
+    text-align: center;
+    transition: 1s;
 
+}
+.login__input-field:focus {
+    border: solid 2px tomato;
 }
 
 .login__input-field:hover {
@@ -102,8 +110,9 @@ h1 {
     transition: 200ms;
 }
 
+
 .login__input-user {
     all: unset;
-    width: 40%;
+    width: 100%;
     margin-top: 4px;
 }

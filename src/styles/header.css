@@ -13,6 +13,12 @@
     border: 5px solid white
 }
 
+@media only screen and (max-width: 620px) {
+    .header__outer {
+        height: 50px;
+    }
+}
+
 .header__link {
     all: unset;
     cursor: pointer;
@@ -31,9 +37,22 @@ h2 {
     padding: 20px;
 }
 
+@media only screen and (max-width: 620px) {
+    h2{
+        font-size: 20px;
+        margin-left: 5px;
+    }
+}
+
 
 .header__logout {
      margin-right: 35px;
+}
+
+@media only screen and (max-width: 620px) {
+  .header__logout {
+    margin-right: 17px;
+  }
 }
 
 .header__btn {
@@ -52,13 +71,9 @@ h2 {
 
 }
 
-@media only screen and (max-width: 360px) {
-    h2{
-        font-size: 20px;
-        margin-left: 5px;
-    }
-
+@media only screen and (max-width: 620px) {
     .header__btn {
-        font-size: 5px;
+        font-size: 11px;
+        margin-right: 8px;
     }
 }

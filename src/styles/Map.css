@@ -1,7 +1,8 @@
 .map-container {
     margin: none;
     width: 100%;
-    height: 100%
+    height: 100%;
+    border-radius: 10px;
 }
 
 .battery-icon {
